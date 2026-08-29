@@ -124,7 +124,11 @@ function Now() {
           <div className="label">Current read</div>
           <h2>{current.title}</h2>
           <p className="lede" style={{ marginBottom: 0 }}>
-            {current.author}. {current.why}
+            {current.author}
+          </p>
+          <p className="lede" style={{ marginBottom: 0 }}>
+            Adler. Separation of tasks. The courage to be disliked — office,
+            family, and the ghost.
           </p>
         </button>
       )}

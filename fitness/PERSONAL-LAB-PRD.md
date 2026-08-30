@@ -1,16 +1,18 @@
-# Personal Lab — PRD (v2)
+# Personal Lab — PRD (v3)
 
-**Status:** agreed direction, 30 Aug 2026  
+**Status:** gym module agreed, 30 Aug 2026  
 **Owner:** Kai / Ashutosh  
-**Job:** log intake. Nothing else.  
-**Does not replace:** Garmin, Lyfta, the Greek God protocol.  
+**Job:** log intake **and** gym routines/sessions. Two modules, one shell.  
+**Does not replace:** Garmin, the Greek God protocol. Lyfta is replaced for lift logging.  
 **Cost:** one user. Supabase free + Vercel Hobby + sideloaded APK. No AI API in the app (JSON is pasted). Not a paid product.
+
+---
 
 ---
 
 ## 1. One line
 
-Phone + website, same React code. Log what went in. Three doors: **manual**, **AI JSON**, **repeat a saved food** at a **new quantity**. JSON is stored in Supabase as **per 1 unit**; the lab multiplies.
+Phone + website, same React code. **Food** and **gym** are siblings. Food: three doors (manual, AI JSON, repeat). Gym: same pattern (manual/form, AI JSON, repeat last) plus a live session. Food files and tables stay frozen; gym is `src/lib/workout/` + `src/pages/workout/`.
 
 ---
 
@@ -24,7 +26,8 @@ Phone + website, same React code. Log what went in. Three doors: **manual**, **A
 |------|-----|
 | Micros as first-class UI | Still skip. Macros + kcal. Extra JSON can sit unused. |
 | File-upload as the only JSON path | **Paste** on Android (heavy daily use). File upload on web too. Both. |
-| Sleep / gym / week dashboard in v0 | Meals day after day. Today + 2455 / 214g. |
+| Sleep / week dashboard in v0 | Still skip. Meals + gym log. |
+| Court / rest timer | Later. Gym only this pass. |
 
 **LLM path:** he will say what he bought, where, ingredients, size. The model predicts **per 1 unit** (1 g, 1 piece, 1 katori…). That JSON is saved on the backend. Next time: pick the food, type a new quantity, lab multiplies. No second AI call unless the recipe changed.
 
@@ -180,18 +183,21 @@ Phone paste of JSON is a v0 requirement, not a later wrap.
 
 ## 10. Out of scope (still)
 
-Garmin import, eat-back, photo calories, barcode, social, AI inside the app, workout logger, Arjun OS merge, micros UI.
+Garmin import, eat-back, photo calories, barcode, social, AI inside the app, court/HIIT as first-class, rest timer, Arjun OS merge, micros UI.
+
+Gym is in: routines + sessions in a **sibling module**. Food `saveParsed` / `jsonIntake` / food pages are not rewritten.
+
+---
 
 ---
 
 ## 11. Success
 
-You can log a junk snack in under 30 seconds (repeat or JSON paste). A week of rows exists in Supabase. Scale and sleep still belong to the watch and the Sunday weigh-in — not this app.
+You can log a junk snack in under 30 seconds. You can import or build a lift routine, run it live (swap when a machine is busy), or paste catch-up JSON. Food still works if gym SQL is not applied yet.
 
 ---
 
-## 12. Prompt file
+## 12. Prompt files
 
-Copy-paste for Claude / Grok / ChatGPT / anything:
-
-`fitness/prompts/INTAKE-JSON.md`
+Food: `fitness/prompts/INTAKE-JSON.md`  
+Gym: `fitness/prompts/ROUTINE-JSON.md` (`kind`: `routine` | `session`)

@@ -1,5 +1,9 @@
 # Intake JSON — prompt for any model
 
+Gym routines use a different file: `fitness/prompts/ROUTINE-JSON.md`. Do not mix them.
+
+Paste the block below into Claude, Grok, ChatGPT, or anything else.
+
 Paste the block below into Claude, Grok, ChatGPT, or anything else.
 
 Then tell it **what you bought, from where, ingredients, size/weight/count, when.** Voice is fine.

@@ -55,7 +55,7 @@ export default function Json() {
     setBusy(true);
     try {
       await saveParsed(uid, preview.items, "json", photo);
-      nav("/", { replace: true });
+      nav("/fuel", { replace: true });
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Save failed");
     } finally {

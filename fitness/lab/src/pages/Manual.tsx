@@ -72,7 +72,7 @@ export default function Manual() {
         "manual",
         photo,
       );
-      nav("/", { replace: true });
+      nav("/fuel", { replace: true });
     } catch (er) {
       setErr(er instanceof Error ? er.message : "Save failed");
     } finally {

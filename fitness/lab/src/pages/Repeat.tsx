@@ -88,7 +88,7 @@ export default function Repeat() {
         photo,
       );
       await touchFood(pick.id);
-      nav("/", { replace: true });
+      nav("/fuel", { replace: true });
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Save failed");
     } finally {

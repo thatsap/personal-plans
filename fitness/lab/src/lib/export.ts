@@ -4,6 +4,8 @@ import { Share } from "@capacitor/share";
 import { KCAL_TARGET, PROTEIN_TARGET } from "./types";
 import type { IngestionRow } from "./types";
 import type { ReviewStats } from "./review";
+import { workCsv, workText, type WorkReview } from "./workout/review";
+import { sportLabel, type SportRow } from "./workout/sports";
 
 function csvEscape(v: string | number) {
   const s = String(v);
@@ -102,9 +104,19 @@ export async function exportAar(opts: {
   rows: IngestionRow[];
   from: string;
   to: string;
+  work?: WorkReview | null;
+  sports?: SportRow[];
 }) {
-  const txt = buildAarText(opts.stats, opts.from, opts.to, opts.rows.length);
-  const csv = buildAarCsv(opts.stats, opts.rows);
+  let txt = buildAarText(opts.stats, opts.from, opts.to, opts.rows.length);
+  let csv = buildAarCsv(opts.stats, opts.rows);
+  if (opts.work) {
+    txt = `${txt}\n\n${workText(opts.work, opts.from, opts.to)}`;
+    csv = `${csv}\n\n${workCsv(opts.work)}`;
+  }
+  if (opts.sports?.length) {
+    txt = `${txt}\n\nLAB // SPORTS\n${opts.sports.map((s) => `- ${sportLabel(s.sport)}  ${s.minutes} min${s.hr_avg ? `  HR ${s.hr_avg}` : ""}${s.peak_hr ? `  peak ${s.peak_hr}` : ""}`).join("\n")}`;
+    csv = `${csv}\n\nsports\nstarted_at,sport,minutes,hr_avg,peak_hr\n${opts.sports.map((s) => [s.started_at, s.sport, s.minutes, s.hr_avg ?? "", s.peak_hr ?? ""].join(",")).join("\n")}`;
+  }
   const combined = `${txt}\n\n--- CSV ---\n${csv}\n`;
   const base = `lab-aar-${opts.from}-to-${opts.to}`;
 

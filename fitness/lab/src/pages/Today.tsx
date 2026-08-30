@@ -119,7 +119,7 @@ export default function Today() {
           ))}
         </div>
       )}
-      <Link to="/add" className="btn">
+      <Link to="/fuel/add" className="btn">
         Log intake
       </Link>
     </div>

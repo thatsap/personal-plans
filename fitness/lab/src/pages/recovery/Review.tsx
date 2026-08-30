@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { SleepBars } from "../../components/charts/StatViz";
 import { RangePills, rangeWindow, type RangeMode } from "../../components/RangePills";
+import { RowOps } from "../../components/RowOps";
 import { ScreenHeader } from "../../components/ScreenHeader";
 import { dayEndIso, dayStartIso } from "../../lib/dates";
-import { listMobility, listSleep } from "../../lib/recovery/db";
+import { deleteMobility, deleteSleep, listMobility, listSleep } from "../../lib/recovery/db";
 import { rollupRecovery } from "../../lib/recovery/review";
 import { routineLabel } from "../../lib/recovery/routines";
 import { fmtHours } from "../../lib/recovery/time";
@@ -27,25 +28,27 @@ export default function RecReview() {
     }
   }
 
+  async function load() {
+    const sb = getSupabase()!;
+    const { data } = await sb.auth.getUser();
+    const uid = data.user?.id;
+    if (!uid) return;
+    try {
+      setSleep(await listSleep(uid, dayStartIso(from), dayEndIso(to)));
+      setErr("");
+    } catch (e) {
+      setSleep([]);
+      setErr(e instanceof Error ? e.message : "Recovery load failed");
+    }
+    try {
+      setMobility(await listMobility(uid, dayStartIso(from), dayEndIso(to)));
+    } catch {
+      setMobility([]);
+    }
+  }
+
   useEffect(() => {
-    void (async () => {
-      const sb = getSupabase()!;
-      const { data } = await sb.auth.getUser();
-      const uid = data.user?.id;
-      if (!uid) return;
-      try {
-        setSleep(await listSleep(uid, dayStartIso(from), dayEndIso(to)));
-        setErr("");
-      } catch (e) {
-        setSleep([]);
-        setErr(e instanceof Error ? e.message : "Recovery load failed");
-      }
-      try {
-        setMobility(await listMobility(uid, dayStartIso(from), dayEndIso(to)));
-      } catch {
-        setMobility([]);
-      }
-    })();
+    void load();
   }, [from, to]);
 
   const stats = rollupRecovery(sleep, mobility, from, to);
@@ -96,6 +99,14 @@ export default function RecReview() {
             {s.kind === "night" ? "Night" : "Nap"}
             <div className="muted">{fmtHours(s.minutes)}</div>
           </div>
+          <RowOps
+            editTo={`/recover/sleep/${s.id}`}
+            onDelete={() =>
+              void deleteSleep(s.id)
+                .then(load)
+                .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
+            }
+          />
         </div>
       ))}
       <h2>Mobility</h2>
@@ -107,6 +118,14 @@ export default function RecReview() {
               {m.minutes} min · {m.moves_done}/{m.moves_total}
             </div>
           </div>
+          <RowOps
+            editTo={`/recover/mobility/${m.id}`}
+            onDelete={() =>
+              void deleteMobility(m.id)
+                .then(load)
+                .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
+            }
+          />
         </div>
       ))}
     </div>

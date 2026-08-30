@@ -2,7 +2,7 @@ import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
   appId: "com.kai.personallab",
-  appName: "Personal Lab",
+  appName: "ap lab",
   webDir: "dist",
   android: {
     allowMixedContent: true,

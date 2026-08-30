@@ -1,7 +1,8 @@
 import { multiply } from "./math";
 import { uploadMealPhoto } from "./photo";
+import { trash } from "./recycle";
 import { getSupabase } from "./supabase";
-import type { FoodRow, IngestionRow, ParsedIngestion, Source } from "./types";
+import type { FoodRow, IngestionRow, ParsedIngestion, Source, Tag, Unit } from "./types";
 
 function sb() {
   const c = getSupabase();
@@ -115,15 +116,34 @@ export async function touchFood(id: string) {
   await sb().from("foods").update({ last_used_at: new Date().toISOString() }).eq("id", id);
 }
 
+export async function getIngestion(id: string): Promise<IngestionRow | null> {
+  const { data, error } = await sb().from("ingestions").select("*").eq("id", id).maybeSingle();
+  if (error) throw error;
+  return (data as IngestionRow) ?? null;
+}
+
+export async function updateIngestion(
+  id: string,
+  patch: {
+    name: string;
+    unit: Unit;
+    quantity: number;
+    kcal: number;
+    protein_g: number;
+    carbs_g: number;
+    fat_g: number;
+    tag: Tag;
+    eaten_at: string;
+  },
+) {
+  const { error } = await sb().from("ingestions").update(patch).eq("id", id);
+  if (error) throw error;
+}
+
 export async function deleteIngestion(id: string) {
-  const { data } = await sb()
-    .from("ingestions")
-    .select("photo_path")
-    .eq("id", id)
-    .maybeSingle();
-  if (data?.photo_path) {
-    await sb().storage.from("meal-photos").remove([data.photo_path as string]);
-  }
+  const row = await getIngestion(id);
+  if (!row) return;
+  await trash(row.user_id, "meal", row.name, { row });
   const { error } = await sb().from("ingestions").delete().eq("id", id);
   if (error) throw error;
 }

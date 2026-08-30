@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ScreenHeader } from "../../components/ScreenHeader";
+import { RowOps } from "../../components/RowOps";
 import { dayEndIso, dayStartIso, formatTime, todayKey } from "../../lib/dates";
 import { deleteSession, listSessions } from "../../lib/workout/db";
 import { volumeKg } from "../../lib/workout/live";
@@ -60,9 +61,14 @@ export default function TrainToday() {
               </div>
               <div className="muted">Volume {volumeKg(work)} kg</div>
             </div>
-            <button className="btn small ghost" type="button" onClick={() => void deleteSession(s.id).then(load)}>
-              Undo
-            </button>
+            <RowOps
+              editTo={`/train/session/${s.id}`}
+              onDelete={() =>
+                void deleteSession(s.id)
+                  .then(load)
+                  .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
+              }
+            />
           </div>
         );
       })}
@@ -78,9 +84,14 @@ export default function TrainToday() {
               {r.peak_hr ? ` · peak ${r.peak_hr}` : ""}
             </div>
           </div>
-          <button className="btn small ghost" type="button" onClick={() => void deleteSport(r.id).then(load)}>
-            Undo
-          </button>
+          <RowOps
+            editTo={`/train/sport/${r.id}`}
+            onDelete={() =>
+              void deleteSport(r.id)
+                .then(load)
+                .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
+            }
+          />
         </div>
       ))}
       <Link to="/train/add" className="btn">

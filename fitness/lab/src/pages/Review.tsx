@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { RangePills, rangeWindow, type RangeMode } from "../components/RangePills";
+import { RowOps } from "../components/RowOps";
 import { ScreenHeader } from "../components/ScreenHeader";
 import { dayEndIso, dayStartIso } from "../lib/dates";
-import { listRange } from "../lib/db";
+import { deleteIngestion, listRange } from "../lib/db";
 import { exportAar } from "../lib/export";
 import { rollup, type ReviewStats } from "../lib/review";
 import { getSupabase } from "../lib/supabase";
@@ -128,6 +129,29 @@ export default function Review() {
             </>
           ) : null}
           <p className="muted">{rows.length} logs in range.</p>
+          <h2>Logs</h2>
+          {rows.map((r) => (
+            <div className="item" key={r.id}>
+              <div>
+                {r.name}
+                <div className="muted">
+                  {r.quantity} {r.unit} · {r.kcal} kcal
+                </div>
+              </div>
+              <RowOps
+                editTo={`/fuel/item/${r.id}`}
+                onDelete={() =>
+                  void deleteIngestion(r.id)
+                    .then(() => {
+                      const next = rows.filter((x) => x.id !== r.id);
+                      setRows(next);
+                      setStats(rollup(next));
+                    })
+                    .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
+                }
+              />
+            </div>
+          ))}
           <button
             className="btn"
             type="button"

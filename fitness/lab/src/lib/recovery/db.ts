@@ -1,3 +1,4 @@
+import { trash } from "../recycle";
 import { getSupabase } from "../supabase";
 import type { MobilityRow, SleepKind, SleepRow } from "./types";
 
@@ -47,7 +48,30 @@ export async function listSleep(
   return (data ?? []) as SleepRow[];
 }
 
+export async function getSleep(id: string): Promise<SleepRow | null> {
+  const { data, error } = await sb().from("recovery_sleep").select("*").eq("id", id).maybeSingle();
+  if (error) throw error;
+  return (data as SleepRow) ?? null;
+}
+
+export async function updateSleep(
+  id: string,
+  patch: {
+    kind: SleepKind;
+    asleep_at: string;
+    wake_at: string;
+    minutes: number;
+    notes: string;
+  },
+) {
+  const { error } = await sb().from("recovery_sleep").update(patch).eq("id", id);
+  if (error) throw error;
+}
+
 export async function deleteSleep(id: string) {
+  const row = await getSleep(id);
+  if (!row) return;
+  await trash(row.user_id, "sleep", row.kind === "night" ? "Night" : "Nap", { row });
   const { error } = await sb().from("recovery_sleep").delete().eq("id", id);
   if (error) throw error;
 }
@@ -94,7 +118,24 @@ export async function listMobility(
   return (data ?? []) as MobilityRow[];
 }
 
+export async function getMobility(id: string): Promise<MobilityRow | null> {
+  const { data, error } = await sb().from("recovery_mobility").select("*").eq("id", id).maybeSingle();
+  if (error) throw error;
+  return (data as MobilityRow) ?? null;
+}
+
+export async function updateMobility(
+  id: string,
+  patch: { started_at: string; minutes: number; notes: string },
+) {
+  const { error } = await sb().from("recovery_mobility").update(patch).eq("id", id);
+  if (error) throw error;
+}
+
 export async function deleteMobility(id: string) {
+  const row = await getMobility(id);
+  if (!row) return;
+  await trash(row.user_id, "mobility", row.routine_key, { row });
   const { error } = await sb().from("recovery_mobility").delete().eq("id", id);
   if (error) throw error;
 }

@@ -97,3 +97,8 @@ export function dayStartIso(key: string): string {
 export function dayEndIso(key: string): string {
   return `${key}T23:59:59.999+05:30`;
 }
+
+export function fromKeyHm(key: string, hm: string): string {
+  const [h = "00", min = "00"] = hm.split(":");
+  return `${key}T${h.padStart(2, "0")}:${min.padStart(2, "0")}:00+05:30`;
+}

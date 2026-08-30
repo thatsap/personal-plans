@@ -1,5 +1,6 @@
 import { getSupabase } from "../supabase";
-import { SPORTS, type Sport, type SportRow } from "./sports";
+import { trash } from "../recycle";
+import { SPORTS, sportLabel, type Sport, type SportRow } from "./sports";
 
 function sb() {
   const c = getSupabase();
@@ -54,7 +55,42 @@ export async function listSports(
   return (data ?? []) as SportRow[];
 }
 
+export async function getSport(id: string): Promise<SportRow | null> {
+  const { data, error } = await sb().from("sport_logs").select("*").eq("id", id).maybeSingle();
+  if (error) throw error;
+  return (data as SportRow) ?? null;
+}
+
+export async function updateSport(
+  id: string,
+  patch: {
+    started_at: string;
+    sport: string;
+    minutes: number;
+    hr_avg: number | null;
+    peak_hr: number | null;
+    notes: string;
+  },
+) {
+  const sport = isSport(patch.sport) ? patch.sport : "other";
+  const { error } = await sb()
+    .from("sport_logs")
+    .update({
+      started_at: patch.started_at,
+      sport,
+      minutes: patch.minutes,
+      hr_avg: patch.hr_avg,
+      peak_hr: patch.peak_hr,
+      notes: patch.notes,
+    })
+    .eq("id", id);
+  if (error) throw error;
+}
+
 export async function deleteSport(id: string) {
+  const row = await getSport(id);
+  if (!row) return;
+  await trash(row.user_id, "sport", sportLabel(row.sport), { row });
   const { error } = await sb().from("sport_logs").delete().eq("id", id);
   if (error) throw error;
 }

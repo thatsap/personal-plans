@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Personal Lab</string>
-    <string name="title_activity_main">Personal Lab</string>
+    <string name="app_name">ap lab</string>
+    <string name="title_activity_main">ap lab</string>
     <string name="package_name">com.kai.personallab</string>
     <string name="custom_url_scheme">com.kai.personallab</string>
 </resources>

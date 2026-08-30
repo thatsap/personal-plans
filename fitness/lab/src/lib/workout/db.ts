@@ -1,5 +1,6 @@
 import { getSupabase } from "../supabase";
 import { parseRoutineObject } from "./parse";
+import { trash } from "../recycle";
 import type {
   LastSlotHint,
   LiveSlot,
@@ -305,7 +306,96 @@ export async function lastSlotHints(userId: string): Promise<LastSlotHint[]> {
   return hints;
 }
 
+export async function getSession(id: string): Promise<SessionWithSets | null> {
+  const { data, error } = await sb().from("workout_sessions").select("*").eq("id", id).maybeSingle();
+  if (error) throw error;
+  if (!data) return null;
+  const session = data as SessionRow;
+  const { data: setData, error: sErr } = await sb()
+    .from("workout_sets")
+    .select("*")
+    .eq("session_id", session.id)
+    .order("sort_index", { ascending: true });
+  if (sErr) throw sErr;
+  return { ...session, sets: (setData ?? []) as SetRow[] };
+}
+
+export async function saveSessionEdits(session: SessionWithSets) {
+  const { error } = await sb()
+    .from("workout_sessions")
+    .update({
+      started_at: session.started_at,
+      minutes: session.minutes,
+      notes: session.notes,
+    })
+    .eq("id", session.id);
+  if (error) throw error;
+  const { error: delErr } = await sb().from("workout_sets").delete().eq("session_id", session.id);
+  if (delErr) throw delErr;
+  if (!session.sets.length) return;
+  const { error: sErr } = await sb().from("workout_sets").insert(
+    session.sets.map((s, i) => ({
+      session_id: session.id,
+      slot_key: s.slot_key,
+      exercise_name: s.exercise_name,
+      planned_name: s.planned_name,
+      scheme: s.scheme,
+      sort_index: i,
+      kg: s.kg,
+      reps: s.reps,
+      rpe: s.rpe,
+      rir: s.rir,
+      kind: s.kind,
+      side: s.side,
+      rest_sec: s.rest_sec,
+    })),
+  );
+  if (sErr) throw sErr;
+}
+
+export async function updateRoutine(
+  id: string,
+  patch: { name: string; tag: RoutineRow["tag"]; source_json: Routine; time_cap_min: number | null },
+) {
+  const { error } = await sb()
+    .from("workout_routines")
+    .update({
+      name: patch.name,
+      tag: patch.tag,
+      source_json: patch.source_json,
+      time_cap_min: patch.time_cap_min,
+    })
+    .eq("id", id);
+  if (error) throw error;
+}
+
+export async function deleteRoutine(id: string) {
+  const row = await getRoutine(id);
+  if (!row) return;
+  await trash(row.user_id, "routine", row.name, { row });
+  const { error } = await sb().from("workout_routines").delete().eq("id", id);
+  if (error) throw error;
+}
+
 export async function deleteSession(id: string) {
+  const full = await getSession(id);
+  if (!full) return;
+  const title = full.routine_snapshot?.name || "Session";
+  await trash(full.user_id, "session", title, { session: stripSets(full), sets: full.sets });
   const { error } = await sb().from("workout_sessions").delete().eq("id", id);
   if (error) throw error;
+}
+
+function stripSets(s: SessionWithSets): SessionRow {
+  return {
+    id: s.id,
+    user_id: s.user_id,
+    routine_id: s.routine_id,
+    started_at: s.started_at,
+    minutes: s.minutes,
+    source: s.source,
+    routine_snapshot: s.routine_snapshot,
+    notes: s.notes,
+    created_at: s.created_at,
+  };
 }

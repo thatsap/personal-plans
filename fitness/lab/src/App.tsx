@@ -26,6 +26,14 @@ import MobilityHub from "./pages/recovery/Mobility";
 import MobilityLive from "./pages/recovery/MobilityLive";
 import RecReview from "./pages/recovery/Review";
 import Prompts from "./pages/Prompts";
+import Bin from "./pages/Bin";
+import EditMeal from "./pages/EditMeal";
+import EditSession from "./pages/workout/EditSession";
+import EditSport from "./pages/workout/EditSport";
+import EditRoutine from "./pages/workout/EditRoutine";
+import EditSleep from "./pages/recovery/EditSleep";
+import EditMobility from "./pages/recovery/EditMobility";
+import { purgeExpired } from "./lib/recycle";
 
 function Guard({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
@@ -40,6 +48,8 @@ function Guard({ children }: { children: ReactNode }) {
     sb.auth.getSession().then(({ data }) => {
       setAuthed(!!data.session);
       setReady(true);
+      const uid = data.session?.user.id;
+      if (uid) void purgeExpired(uid);
     });
     const { data: sub } = sb.auth.onAuthStateChange((_e, session) => {
       setAuthed(!!session);
@@ -128,6 +138,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/export" element={<ExportDay />} />
         <Route path="/prompts" element={<Prompts />} />
+        <Route path="/bin" element={<Bin />} />
         <Route path="/train/live/:routineId" element={<WorkoutLive />} />
         <Route path="/recover/move/:routineKey" element={<MobilityLive />} />
       </Route>
@@ -144,6 +155,7 @@ export default function App() {
         <Route path="/fuel/json" element={<Json />} />
         <Route path="/fuel/repeat" element={<Repeat />} />
         <Route path="/fuel/review" element={<Review />} />
+        <Route path="/fuel/item/:id" element={<EditMeal />} />
       </Route>
       <Route
         element={
@@ -159,6 +171,9 @@ export default function App() {
         <Route path="/train/manual" element={<WorkoutManual />} />
         <Route path="/train/sports" element={<SportsLog />} />
         <Route path="/train/review" element={<TrainReview />} />
+        <Route path="/train/session/:id" element={<EditSession />} />
+        <Route path="/train/sport/:id" element={<EditSport />} />
+        <Route path="/train/routine/:id" element={<EditRoutine />} />
       </Route>
       <Route
         element={
@@ -169,7 +184,9 @@ export default function App() {
       >
         <Route path="/recover" element={<RecToday />} />
         <Route path="/recover/sleep" element={<SleepLog />} />
+        <Route path="/recover/sleep/:id" element={<EditSleep />} />
         <Route path="/recover/move" element={<MobilityHub />} />
+        <Route path="/recover/mobility/:id" element={<EditMobility />} />
         <Route path="/recover/review" element={<RecReview />} />
       </Route>
       <Route path="/add" element={<Navigate to="/fuel/add" replace />} />

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { RowOps } from "../RowOps";
 import { dayEndIso, dayStartIso, formatTime } from "../../lib/dates";
 import { deleteSession, listSessions } from "../../lib/workout/db";
 import { volumeKg } from "../../lib/workout/live";
@@ -64,13 +65,10 @@ export function WorkToday({ dayKey }: { dayKey: string }) {
                 </div>
               ) : null}
             </div>
-            <button
-              className="btn small ghost"
-              type="button"
-              onClick={() => void deleteSession(s.id).then(() => load())}
-            >
-              Undo
-            </button>
+            <RowOps
+              editTo={`/train/session/${s.id}`}
+              onDelete={() => void deleteSession(s.id).then(() => load())}
+            />
           </div>
         );
       })}

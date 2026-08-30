@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 import { MuscleWeb } from "../../components/charts/MuscleWeb";
 import { HorzBars, Legend, StackedDays, TrainHero } from "../../components/charts/StatViz";
 import { RangePills, rangeWindow, type RangeMode } from "../../components/RangePills";
+import { RowOps } from "../../components/RowOps";
 import { ScreenHeader } from "../../components/ScreenHeader";
 import { WorkAar } from "../../components/workout/WorkAar";
 import { dayEndIso, dayStartIso } from "../../lib/dates";
 import { getSupabase } from "../../lib/supabase";
 import { muscleCoverage } from "../../lib/workout/muscles";
 import { fmtMin, rollupActivity } from "../../lib/workout/activity";
-import { listSessions } from "../../lib/workout/db";
+import { listSessions, deleteSession } from "../../lib/workout/db";
 import { rollupWork, type WorkReview } from "../../lib/workout/review";
-import { listSports } from "../../lib/workout/sportsDb";
+import { deleteSport, listSports } from "../../lib/workout/sportsDb";
 import { sportLabel, type SportRow } from "../../lib/workout/sports";
 
 export default function TrainReview() {
@@ -30,25 +31,27 @@ export default function TrainReview() {
     }
   }
 
+  async function load() {
+    const sb = getSupabase()!;
+    const { data } = await sb.auth.getUser();
+    const uid = data.user?.id;
+    if (!uid) return;
+    try {
+      setWork(rollupWork(await listSessions(uid, dayStartIso(from), dayEndIso(to))));
+      setErr("");
+    } catch (e) {
+      setWork(null);
+      setErr(e instanceof Error ? e.message : "Gym load failed");
+    }
+    try {
+      setSports(await listSports(uid, dayStartIso(from), dayEndIso(to)));
+    } catch {
+      setSports([]);
+    }
+  }
+
   useEffect(() => {
-    void (async () => {
-      const sb = getSupabase()!;
-      const { data } = await sb.auth.getUser();
-      const uid = data.user?.id;
-      if (!uid) return;
-      try {
-        setWork(rollupWork(await listSessions(uid, dayStartIso(from), dayEndIso(to))));
-        setErr("");
-      } catch (e) {
-        setWork(null);
-        setErr(e instanceof Error ? e.message : "Gym load failed");
-      }
-      try {
-        setSports(await listSports(uid, dayStartIso(from), dayEndIso(to)));
-      } catch {
-        setSports([]);
-      }
-    })();
+    void load();
   }, [from, to]);
 
   const act = rollupActivity(from, to, work?.sessions ?? [], sports);
@@ -122,6 +125,23 @@ export default function TrainReview() {
         <p className="rc-sub">Volume</p>
         <StackedDays days={act.days} mode="volume" />
         <WorkAar stats={work} />
+        <h2>Sessions</h2>
+        {(work?.sessions ?? []).map((s) => (
+          <div className="item" key={s.id}>
+            <div>
+              {s.routine_snapshot?.name || "Session"}
+              <div className="muted">{s.sets.filter((x) => x.kind === "work").length} work sets</div>
+            </div>
+            <RowOps
+              editTo={`/train/session/${s.id}`}
+              onDelete={() =>
+                void deleteSession(s.id)
+                  .then(load)
+                  .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
+              }
+            />
+          </div>
+        ))}
       </section>
 
       <section className="st-block">
@@ -154,6 +174,14 @@ export default function TrainReview() {
                 {s.peak_hr ? ` · peak ${s.peak_hr}` : ""}
               </div>
             </div>
+            <RowOps
+              editTo={`/train/sport/${s.id}`}
+              onDelete={() =>
+                void deleteSport(s.id)
+                  .then(load)
+                  .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
+              }
+            />
           </div>
         ))}
       </section>

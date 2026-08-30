@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { MealThumb } from "../components/MealThumb";
 import { Meter } from "../components/Meter";
+import { RowOps } from "../components/RowOps";
 import { ScreenHeader } from "../components/ScreenHeader";
 import { dayEndIso, dayStartIso, formatTime, todayKey } from "../lib/dates";
 import { deleteIngestion, listToday } from "../lib/db";
@@ -107,13 +108,14 @@ export default function Today() {
                 <div className="meter-num" style={{ fontSize: 16 }}>
                   {r.kcal}
                 </div>
-                <button
-                  className="btn small ghost"
-                  type="button"
-                  onClick={() => void remove(r.id)}
-                >
-                  Undo
-                </button>
+                <RowOps
+                  editTo={`/fuel/item/${r.id}`}
+                  onDelete={() =>
+                    void remove(r.id).catch((e) =>
+                      setErr(e instanceof Error ? e.message : "Delete failed"),
+                    )
+                  }
+                />
               </div>
             </div>
           ))}

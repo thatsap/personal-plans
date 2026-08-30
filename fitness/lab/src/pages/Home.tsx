@@ -73,6 +73,13 @@ export default function Home() {
             <span>Fuel + gym JSON — copy, no repo</span>
           </div>
         </Link>
+        <Link className="home-door bin" to="/bin">
+          <span className="door-idx">06</span>
+          <div>
+            <b>Bin</b>
+            <span>Restore deletes for 7 days</span>
+          </div>
+        </Link>
       </div>
       <p className="muted">Theme</p>
       <div className="pillrow">

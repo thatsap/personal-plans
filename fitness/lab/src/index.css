@@ -389,6 +389,19 @@ textarea {
   letter-spacing: 0.12em;
 }
 
+.row-ops {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.row-ops .btn.small {
+  margin-top: 0;
+  text-decoration: none;
+}
+
 .doors {
   display: grid;
   gap: 10px;

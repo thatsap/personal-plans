@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ScreenHeader } from "../../components/ScreenHeader";
+import { RowOps } from "../../components/RowOps";
 import { deleteMobility, deleteSleep, listMobility, listSleep } from "../../lib/recovery/db";
 import { routineLabel } from "../../lib/recovery/routines";
 import { fmtHours } from "../../lib/recovery/time";
@@ -73,9 +74,14 @@ export default function RecToday() {
               {formatTime(s.asleep_at)} → {formatTime(s.wake_at)} · {fmtHours(s.minutes)}
             </div>
           </div>
-          <button className="btn small ghost" type="button" onClick={() => void deleteSleep(s.id).then(load)}>
-            Undo
-          </button>
+          <RowOps
+            editTo={`/recover/sleep/${s.id}`}
+            onDelete={() =>
+              void deleteSleep(s.id)
+                .then(load)
+                .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
+            }
+          />
         </div>
       ))}
       <h2>Mobility</h2>
@@ -88,9 +94,14 @@ export default function RecToday() {
               {formatTime(m.started_at)} · {m.minutes} min · {m.moves_done}/{m.moves_total}
             </div>
           </div>
-          <button className="btn small ghost" type="button" onClick={() => void deleteMobility(m.id).then(load)}>
-            Undo
-          </button>
+          <RowOps
+            editTo={`/recover/mobility/${m.id}`}
+            onDelete={() =>
+              void deleteMobility(m.id)
+                .then(load)
+                .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
+            }
+          />
         </div>
       ))}
       <Link to="/recover/sleep" className="btn">

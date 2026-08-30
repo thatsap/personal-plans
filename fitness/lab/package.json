@@ -1,0 +1,36 @@
+{
+  "name": "personal-lab",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --port 5174",
+    "local": "vite --host --port 5174",
+    "start": "vite --host --port 5174",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host --port 4174",
+    "cap:sync": "npx cap sync android",
+    "apk": "npm run build && npx cap sync android && npm run apk:gradle",
+    "apk:replace": "npm run apk",
+    "apk:gradle": "node scripts/assemble-apk.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/camera": "^7.0.5",
+    "@capacitor/core": "^7.4.3",
+    "@capacitor/filesystem": "^7.1.8",
+    "@capacitor/share": "^7.0.4",
+    "@supabase/supabase-js": "^2.57.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.5"
+  }
+}

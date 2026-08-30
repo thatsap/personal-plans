@@ -1,0 +1,17 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.local
+android/.gradle
+android/app/build
+android/build
+android/local.properties
+android/app/src/main/assets/public
+android/capacitor-cordova-android-plugins
+.idea
+.DS_Store
+*.apk
+!scripts/
+.vercel

@@ -1,12 +1,9 @@
 import { useMemo, useRef, useState, type ChangeEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ScreenHeader } from "../../components/ScreenHeader";
 import { parseWorkoutJson } from "../../lib/workout/parse";
 import { saveParsedSession, upsertRoutine } from "../../lib/workout/db";
 import { getSupabase } from "../../lib/supabase";
-
-const HINT =
-  "Voice the day to any AI with fitness/prompts/ROUTINE-JSON.md. kind routine = library. kind session = catch-up actuals.";
 
 export default function WorkoutJson() {
   const nav = useNavigate();
@@ -67,7 +64,9 @@ export default function WorkoutJson() {
   return (
     <div className="wrap">
       <ScreenHeader kicker="forge // file" title="Workout JSON" />
-      <p className="muted">{HINT}</p>
+      <p className="muted">
+        Copy the gym prompt from <Link to="/prompts">Prompts</Link>. kind routine = library. kind session = catch-up.
+      </p>
       <button className="btn" type="button" onClick={() => fileRef.current?.click()}>
         Choose JSON from folder
       </button>

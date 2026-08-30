@@ -20,6 +20,12 @@ import WorkoutLive from "./pages/workout/Live";
 import TrainToday from "./pages/workout/TrainToday";
 import SportsLog from "./pages/workout/Sports";
 import TrainReview from "./pages/workout/TrainReview";
+import RecToday from "./pages/recovery/Today";
+import SleepLog from "./pages/recovery/Sleep";
+import MobilityHub from "./pages/recovery/Mobility";
+import MobilityLive from "./pages/recovery/MobilityLive";
+import RecReview from "./pages/recovery/Review";
+import Prompts from "./pages/Prompts";
 
 function Guard({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
@@ -84,6 +90,25 @@ function TrainShell() {
   );
 }
 
+function RecoverShell() {
+  return (
+    <>
+      <Outlet />
+      <nav className="nav cols-5">
+        <NavLink to="/" end>
+          Lab
+        </NavLink>
+        <NavLink to="/recover" end>
+          Today
+        </NavLink>
+        <NavLink to="/recover/sleep">Sleep</NavLink>
+        <NavLink to="/recover/move">Move</NavLink>
+        <NavLink to="/recover/review">AAR</NavLink>
+      </nav>
+    </>
+  );
+}
+
 function BareShell() {
   return <Outlet />;
 }
@@ -102,7 +127,9 @@ export default function App() {
       >
         <Route path="/" element={<Home />} />
         <Route path="/export" element={<ExportDay />} />
+        <Route path="/prompts" element={<Prompts />} />
         <Route path="/train/live/:routineId" element={<WorkoutLive />} />
+        <Route path="/recover/move/:routineKey" element={<MobilityLive />} />
       </Route>
       <Route
         element={
@@ -132,6 +159,18 @@ export default function App() {
         <Route path="/train/manual" element={<WorkoutManual />} />
         <Route path="/train/sports" element={<SportsLog />} />
         <Route path="/train/review" element={<TrainReview />} />
+      </Route>
+      <Route
+        element={
+          <Guard>
+            <RecoverShell />
+          </Guard>
+        }
+      >
+        <Route path="/recover" element={<RecToday />} />
+        <Route path="/recover/sleep" element={<SleepLog />} />
+        <Route path="/recover/move" element={<MobilityHub />} />
+        <Route path="/recover/review" element={<RecReview />} />
       </Route>
       <Route path="/add" element={<Navigate to="/fuel/add" replace />} />
       <Route path="/add/json" element={<Navigate to="/fuel/json" replace />} />

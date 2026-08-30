@@ -11,7 +11,7 @@ export default function WorkoutHub() {
           <span className="door-idx">01</span>
           <div>
             <b>JSON</b>
-            <span>ROUTINE-JSON.md — routine or catch-up</span>
+            <span>Paste routine or catch-up JSON</span>
           </div>
         </Link>
         <Link className="door" to="/train/repeat">
@@ -33,6 +33,13 @@ export default function WorkoutHub() {
           <div>
             <b>Sport</b>
             <span>Badminton, TT, run — minutes + optional HR</span>
+          </div>
+        </Link>
+        <Link className="door" to="/prompts">
+          <span className="door-idx">05</span>
+          <div>
+            <b>Prompts</b>
+            <span>Copy gym JSON prompt — no repo</span>
           </div>
         </Link>
       </div>

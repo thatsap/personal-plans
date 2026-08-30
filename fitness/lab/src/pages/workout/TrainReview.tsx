@@ -1,29 +1,32 @@
 import { useEffect, useState } from "react";
+import { MuscleWeb } from "../../components/charts/MuscleWeb";
+import { HorzBars, Legend, StackedDays, TrainHero } from "../../components/charts/StatViz";
+import { RangePills, rangeWindow, type RangeMode } from "../../components/RangePills";
 import { ScreenHeader } from "../../components/ScreenHeader";
 import { WorkAar } from "../../components/workout/WorkAar";
-import { dayEndIso, dayStartIso, lastNDayKeys, todayKey } from "../../lib/dates";
+import { dayEndIso, dayStartIso } from "../../lib/dates";
 import { getSupabase } from "../../lib/supabase";
+import { muscleCoverage } from "../../lib/workout/muscles";
+import { fmtMin, rollupActivity } from "../../lib/workout/activity";
 import { listSessions } from "../../lib/workout/db";
 import { rollupWork, type WorkReview } from "../../lib/workout/review";
 import { listSports } from "../../lib/workout/sportsDb";
 import { sportLabel, type SportRow } from "../../lib/workout/sports";
 
-type Mode = "3" | "7" | "custom";
-
 export default function TrainReview() {
-  const [mode, setMode] = useState<Mode>("7");
-  const [from, setFrom] = useState(() => lastNDayKeys(7).from);
-  const [to, setTo] = useState(() => todayKey());
+  const [mode, setMode] = useState<RangeMode>("7");
+  const [from, setFrom] = useState(() => rangeWindow("7")!.from);
+  const [to, setTo] = useState(() => rangeWindow("7")!.to);
   const [work, setWork] = useState<WorkReview | null>(null);
   const [sports, setSports] = useState<SportRow[]>([]);
   const [err, setErr] = useState("");
 
-  function applyMode(m: Mode) {
+  function applyMode(m: RangeMode) {
     setMode(m);
-    if (m === "3" || m === "7") {
-      const r = lastNDayKeys(m === "3" ? 3 : 7);
-      setFrom(r.from);
-      setTo(r.to);
+    const w = rangeWindow(m, { from: "2025-12-16", to: "2026-08-26" });
+    if (w) {
+      setFrom(w.from);
+      setTo(w.to);
     }
   }
 
@@ -48,23 +51,17 @@ export default function TrainReview() {
     })();
   }, [from, to]);
 
-  const sportMin = sports.reduce((n, s) => n + s.minutes, 0);
+  const act = rollupActivity(from, to, work?.sessions ?? [], sports);
+  const cover = muscleCoverage(work?.sessions ?? []);
+  const total = act.liftMin + act.sportMin;
+  const liftShare = total ? Math.round((act.liftMin / total) * 100) : 0;
+  const courtShare = total ? 100 - liftShare : 0;
 
   return (
     <div className="wrap">
       <ScreenHeader kicker="after action" title="Training" />
-      <p className="muted">Lifts and sports in this window. Food AAR lives in Fuel.</p>
-      <div className="pillrow">
-        <button className={mode === "3" ? "on" : ""} type="button" onClick={() => applyMode("3")}>
-          3 days
-        </button>
-        <button className={mode === "7" ? "on" : ""} type="button" onClick={() => applyMode("7")}>
-          7 days
-        </button>
-        <button className={mode === "custom" ? "on" : ""} type="button" onClick={() => setMode("custom")}>
-          Custom
-        </button>
-      </div>
+      <p className="muted">Lift and court, together then split. Food AAR stays in Fuel.</p>
+      <RangePills mode={mode} showDump onChange={applyMode} />
       {mode === "custom" ? (
         <div className="row">
           <label style={{ flex: 1 }}>
@@ -78,23 +75,88 @@ export default function TrainReview() {
         </div>
       ) : null}
       {err ? <p className="muted">{err}</p> : null}
-      <WorkAar stats={work} />
-      <h2>Sports</h2>
-      <p className="muted">
-        {sports.length} logs · {sportMin} min
-      </p>
-      {sports.map((s) => (
-        <div className="item" key={s.id}>
-          <div>
-            {sportLabel(s.sport)}
-            <div className="muted">
-              {s.minutes} min
-              {s.hr_avg ? ` · HR ${s.hr_avg}` : ""}
-              {s.peak_hr ? ` · peak ${s.peak_hr}` : ""}
-            </div>
+
+      <section className="st-block">
+        <p className="kicker">all</p>
+        <h2>Load</h2>
+        <TrainHero liftMin={act.liftMin} sportMin={act.sportMin} volume={act.volume} />
+        <Legend />
+        <p className="muted">
+          {liftShare}% lift · {courtShare}% court · {act.liftSessions} sessions · {act.sportLogs} sports
+        </p>
+        <StackedDays days={act.days} mode="time" />
+      </section>
+
+      <section className="st-block">
+        <p className="kicker">coverage</p>
+        <h2>Muscle web</h2>
+        <p className="muted">One picture. Peak group is full. Empty spoke = not hit in this window.</p>
+        <MuscleWeb hits={cover.hits} />
+        {cover.missed.length ? (
+          <p className="err">Not hit: {cover.missed.join(" · ")}</p>
+        ) : (
+          <p className="muted">Every spoke got a working set.</p>
+        )}
+        <div className="st-chips">
+          {cover.hits.map((h) => (
+            <span key={h.id} className={h.sets ? "on" : ""}>
+              {h.label} {h.sets || "—"}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="st-block">
+        <p className="kicker">lift</p>
+        <h2>Training</h2>
+        <div className="totals">
+          <div className="stat">
+            <b>{act.liftSessions}</b>
+            <span>sessions</span>
+          </div>
+          <div className="stat">
+            <b>{fmtMin(act.liftMin)}</b>
+            <span>time under bar</span>
           </div>
         </div>
-      ))}
+        <p className="rc-sub">Volume</p>
+        <StackedDays days={act.days} mode="volume" />
+        <WorkAar stats={work} />
+      </section>
+
+      <section className="st-block">
+        <p className="kicker">cardio</p>
+        <h2>Sport</h2>
+        <div className="totals">
+          <div className="stat">
+            <b>{fmtMin(act.sportMin)}</b>
+            <span>court / run</span>
+          </div>
+          <div className="stat">
+            <b>{act.avgHr ?? "—"}</b>
+            <span>avg HR</span>
+          </div>
+        </div>
+        <HorzBars
+          rows={act.bySport.map((s) => ({
+            label: s.label,
+            value: s.minutes,
+            hint: `${s.count} · ${fmtMin(s.minutes)}${s.hr ? ` · HR ${s.hr}` : ""}`,
+          }))}
+        />
+        {sports.map((s) => (
+          <div className="item" key={s.id}>
+            <div>
+              {sportLabel(s.sport)}
+              <div className="muted">
+                {s.minutes} min
+                {s.hr_avg ? ` · HR ${s.hr_avg}` : ""}
+                {s.peak_hr ? ` · peak ${s.peak_hr}` : ""}
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
     </div>
   );
 }

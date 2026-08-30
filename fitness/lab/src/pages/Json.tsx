@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState, type ChangeEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ScreenHeader } from "../components/ScreenHeader";
 import { PhotoOptional } from "../components/PhotoOptional";
 import { saveParsed } from "../lib/db";
@@ -8,8 +8,11 @@ import { multiply } from "../lib/math";
 import { getSupabase } from "../lib/supabase";
 import type { ParsedIngestion } from "../lib/types";
 
-const PROMPT_HINT =
-  "Voice the plate to any AI with fitness/prompts/INTAKE-JSON.md. Then paste, or pick the file from a folder.";
+const PROMPT_HINT = (
+  <>
+    Copy the Fuel prompt from <Link to="/prompts">Prompts</Link>, voice the plate, paste JSON here.
+  </>
+);
 
 export default function Json() {
   const nav = useNavigate();

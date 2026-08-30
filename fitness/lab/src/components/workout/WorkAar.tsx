@@ -4,7 +4,6 @@ export function WorkAar({ stats }: { stats: WorkReview | null }) {
   if (!stats) {
     return (
       <div className="wk-aar">
-        <h2>Gym</h2>
         <p className="muted">No gym data in this window (or tables not patched yet).</p>
       </div>
     );
@@ -12,17 +11,6 @@ export function WorkAar({ stats }: { stats: WorkReview | null }) {
 
   return (
     <div className="wk-aar">
-      <h2>Gym</h2>
-      <div className="totals">
-        <div className="stat">
-          <b>{stats.sessions.length}</b>
-          <span>sessions</span>
-        </div>
-        <div className="stat">
-          <b>{stats.gymDays}</b>
-          <span>gym days</span>
-        </div>
-      </div>
       <ul className="verdict wrong">
         {stats.overCap.map((w) => (
           <li key={w}>{w}</li>

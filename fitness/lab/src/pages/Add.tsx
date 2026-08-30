@@ -28,6 +28,13 @@ export default function Add() {
             <span>Type per-unit, then multiply</span>
           </div>
         </Link>
+        <Link className="door" to="/prompts">
+          <span className="door-idx">04</span>
+          <div>
+            <b>Prompts</b>
+            <span>Copy Fuel JSON prompt — no repo</span>
+          </div>
+        </Link>
       </div>
     </div>
   );

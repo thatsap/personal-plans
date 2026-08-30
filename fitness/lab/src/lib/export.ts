@@ -6,6 +6,8 @@ import type { IngestionRow } from "./types";
 import type { ReviewStats } from "./review";
 import { workCsv, workText, type WorkReview } from "./workout/review";
 import { sportLabel, type SportRow } from "./workout/sports";
+import { recoveryCsv, recoveryText, rollupRecovery } from "./recovery/review";
+import type { MobilityRow, SleepRow } from "./recovery/types";
 
 function csvEscape(v: string | number) {
   const s = String(v);
@@ -106,6 +108,8 @@ export async function exportAar(opts: {
   to: string;
   work?: WorkReview | null;
   sports?: SportRow[];
+  sleep?: SleepRow[];
+  mobility?: MobilityRow[];
 }) {
   let txt = buildAarText(opts.stats, opts.from, opts.to, opts.rows.length);
   let csv = buildAarCsv(opts.stats, opts.rows);
@@ -116,6 +120,11 @@ export async function exportAar(opts: {
   if (opts.sports?.length) {
     txt = `${txt}\n\nLAB // SPORTS\n${opts.sports.map((s) => `- ${sportLabel(s.sport)}  ${s.minutes} min${s.hr_avg ? `  HR ${s.hr_avg}` : ""}${s.peak_hr ? `  peak ${s.peak_hr}` : ""}`).join("\n")}`;
     csv = `${csv}\n\nsports\nstarted_at,sport,minutes,hr_avg,peak_hr\n${opts.sports.map((s) => [s.started_at, s.sport, s.minutes, s.hr_avg ?? "", s.peak_hr ?? ""].join(",")).join("\n")}`;
+  }
+  if (opts.sleep?.length || opts.mobility?.length) {
+    const rec = rollupRecovery(opts.sleep ?? [], opts.mobility ?? []);
+    txt = `${txt}\n\n${recoveryText(rec, opts.from, opts.to, opts.sleep ?? [], opts.mobility ?? [])}`;
+    csv = `${csv}\n\n${recoveryCsv(opts.sleep ?? [], opts.mobility ?? [])}`;
   }
   const combined = `${txt}\n\n--- CSV ---\n${csv}\n`;
   const base = `lab-aar-${opts.from}-to-${opts.to}`;

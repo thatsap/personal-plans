@@ -52,14 +52,41 @@ export function formatDay(key: string): string {
   }).format(dt);
 }
 
+export function addDaysKey(key: string, days: number): string {
+  const [y, m, d] = key.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  dt.setUTCDate(dt.getUTCDate() + days);
+  return dt.toISOString().slice(0, 10);
+}
+
+export function yesterdayKey(): string {
+  return addDaysKey(todayKey(), -1);
+}
+
+export function eachDayKeys(from: string, to: string): string[] {
+  const out: string[] = [];
+  let k = from;
+  while (k <= to) {
+    out.push(k);
+    k = addDaysKey(k, 1);
+    if (out.length > 400) break;
+  }
+  return out;
+}
+
+export function barLabel(key: string, span: number): string {
+  const [y, m, d] = key.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d, 6, 30));
+  if (span <= 8) {
+    return new Intl.DateTimeFormat("en-GB", { timeZone: TZ, weekday: "narrow" }).format(dt);
+  }
+  return String(d);
+}
+
 /** Inclusive IST date keys for last n days including today. */
 export function lastNDayKeys(n: number): { from: string; to: string } {
   const to = todayKey();
-  const [y, m, d] = to.split("-").map(Number);
-  const start = new Date(Date.UTC(y, m - 1, d));
-  start.setUTCDate(start.getUTCDate() - (n - 1));
-  const from = start.toISOString().slice(0, 10);
-  return { from, to };
+  return { from: addDaysKey(to, -(n - 1)), to };
 }
 
 /** Start of IST day as ISO for query (from 00:00 IST). */

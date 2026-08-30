@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { applyTheme, readTheme, THEMES, type ThemeId } from "../lib/theme";
+import { importDump } from "../lib/seed/dump";
+import { getSupabase } from "../lib/supabase";
 
 const LABELS: Record<ThemeId, string> = {
   forge: "Forge",
@@ -10,6 +12,23 @@ const LABELS: Record<ThemeId, string> = {
 
 export default function Home() {
   const [theme, setTheme] = useState<ThemeId>(() => readTheme());
+  const [dump, setDump] = useState("");
+
+  useEffect(() => {
+    void (async () => {
+      const sb = getSupabase();
+      if (!sb) return;
+      const { data } = await sb.auth.getUser();
+      const uid = data.user?.id;
+      if (!uid) return;
+      try {
+        const r = await importDump(uid);
+        setDump(r === "already" ? "Dump already in." : "Garmin + Lyfta dump loaded. Not food.");
+      } catch (e) {
+        setDump(e instanceof Error ? e.message : "Dump failed");
+      }
+    })();
+  }, []);
 
   return (
     <div className="wrap home-wrap">
@@ -33,11 +52,25 @@ export default function Home() {
             <span>Lifts, sports, rest timer, analysis</span>
           </div>
         </Link>
-        <Link className="home-door export" to="/export">
+        <Link className="home-door recover" to="/recover">
           <span className="door-idx">03</span>
           <div>
+            <b>Recovery</b>
+            <span>Sleep, naps, stretch blocks</span>
+          </div>
+        </Link>
+        <Link className="home-door export" to="/export">
+          <span className="door-idx">04</span>
+          <div>
             <b>Export</b>
-            <span>One day: food + lifts + court</span>
+            <span>Window: food + lifts + court + sleep</span>
+          </div>
+        </Link>
+        <Link className="home-door prompts" to="/prompts">
+          <span className="door-idx">05</span>
+          <div>
+            <b>Prompts</b>
+            <span>Fuel + gym JSON — copy, no repo</span>
           </div>
         </Link>
       </div>
@@ -57,6 +90,7 @@ export default function Home() {
           </button>
         ))}
       </div>
+      {dump ? <p className="muted">{dump}</p> : null}
     </div>
   );
 }

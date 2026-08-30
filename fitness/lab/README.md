@@ -6,14 +6,14 @@ Intake log + gym routines. Android APK + same web app. Food and gym are sibling 
 
 1. New project (free).
 2. SQL editor: run `supabase/schema.sql`.
-3. **Existing project:** run `supabase/patch-workouts.sql` then `supabase/patch-sports.sql` (new tables only; meals stay).
+3. **Existing project:** run `supabase/patch-workouts.sql`, then `patch-sports.sql`, then `patch-recovery.sql` (new tables only; meals stay).
 4. Auth → Email on. **Turn off Confirm email**.
 5. Settings → API: Project URL + `anon` `public` key.
 6. In the app: **Connect** screen, paste those two, create account, log in.
 
 Gym JSON prompt: `fitness/prompts/ROUTINE-JSON.md` (`kind` routine or session).
 
-Home decks: **Fuel** (food) · **Training** (lifts + sports) · **Export** (one day combined).
+Home decks: **Fuel** (food) · **Training** (lifts + sports) · **Recovery** (sleep + stretch) · **Export** (one day combined).
 
 Test on `npm run local` (localhost + LAN). Do not ship an APK until you say so.
 

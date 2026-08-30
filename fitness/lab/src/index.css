@@ -534,6 +534,7 @@ textarea {
 
 .pillrow {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin: 8px 0 14px;
 }
@@ -946,4 +947,525 @@ ul.verdict.right li {
 .wk-rest-row b {
   font-family: var(--mono);
   font-size: 28px;
+}
+
+.rc-live {
+  padding-bottom: 160px;
+}
+
+.rc-move {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 22px 16px 18px;
+  margin: 12px 0 18px;
+}
+
+.rc-move h2 {
+  font-family: var(--cond);
+  font-size: 36px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 6px 0 12px;
+  color: var(--text);
+}
+
+.rc-move p {
+  margin: 0 0 8px;
+  line-height: 1.45;
+}
+
+.rc-hold {
+  z-index: 30;
+}
+
+.rc-hub {
+  padding-bottom: 120px;
+}
+
+.rc-panel {
+  margin: 18px 0 28px;
+  padding: 18px 14px 16px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, var(--card)), var(--card));
+}
+
+.rc-panel-hit {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 14%, var(--card)), var(--card));
+}
+
+.rc-panel-head h2 {
+  margin: 4px 0 0;
+  font-size: 32px;
+  color: var(--text);
+}
+
+.rc-sub {
+  margin: 16px 0 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+}
+
+.rc-stretch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rc-stretch-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 12px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 78px;
+}
+
+.rc-stretch-card b {
+  font-family: var(--cond);
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rc-stretch-card span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.rc-stretch-card:hover {
+  border-color: var(--accent);
+}
+
+.rc-parts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rc-parts button {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: inherit;
+  padding: 10px 12px;
+  font-family: var(--cond);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rc-parts button.on {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.rc-plan-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.rc-plan-meta div {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  padding: 12px;
+}
+
+.rc-plan-meta b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 22px;
+}
+
+.rc-plan-meta span {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rc-preview {
+  display: grid;
+  gap: 6px;
+}
+
+.rc-acc {
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.rc-acc.open {
+  border-color: var(--accent-dim);
+}
+
+.rc-acc-h {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 12px;
+  margin: 0;
+}
+
+.rc-acc-h strong {
+  display: block;
+  font-family: var(--cond);
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rc-acc-h em {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 11px;
+  font-family: var(--mono);
+}
+
+.rc-n {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.rc-chev {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.rc-acc-b {
+  padding: 0 12px 14px 56px;
+}
+
+.rc-acc-b p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.rc-acc-b span {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.rc-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 14px;
+}
+
+.rc-dots i {
+  width: 8px;
+  height: 8px;
+  background: var(--line);
+  display: block;
+}
+
+.rc-dots i.did {
+  background: var(--accent-dim);
+}
+
+.rc-dots i.on {
+  background: var(--accent);
+  width: 16px;
+}
+
+.rc-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  margin: 12px 0 10px;
+}
+
+.rc-tabs button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 8px 6px;
+  font-family: var(--cond);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.rc-tabs button.on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.rc-copy {
+  min-height: 4.5em;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.st-block {
+  margin: 22px 0 28px;
+}
+
+.st-block h2 {
+  margin-top: 4px;
+}
+
+.st-hero {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0 12px;
+}
+
+.st-donut {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.st-donut svg {
+  width: 140px;
+  height: 140px;
+  transform: rotate(0deg);
+}
+
+.st-donut-mid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.st-donut-mid b {
+  font-family: var(--mono);
+  font-size: 18px;
+}
+
+.st-donut-mid span {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.st-hero-nums {
+  display: grid;
+  gap: 10px;
+}
+
+.st-hero-nums b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 22px;
+}
+
+.st-hero-nums span {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.st-leg {
+  display: flex;
+  gap: 16px;
+  margin: 4px 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.st-leg i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.st-leg i.lift,
+.st-stack i.lift {
+  background: var(--accent);
+}
+
+.st-leg i.sport,
+.st-stack i.sport {
+  background: var(--warn);
+}
+
+.st-bars {
+  display: grid;
+  gap: 4px;
+  height: 148px;
+  align-items: end;
+  margin: 8px 0 6px;
+}
+
+.st-col {
+  display: flex;
+  flex-direction: column;
+  height: 148px;
+  min-width: 0;
+}
+
+.st-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  background: color-mix(in srgb, var(--line) 35%, transparent);
+  min-height: 118px;
+}
+
+.st-stack i {
+  display: block;
+  width: 100%;
+  min-height: 2px;
+}
+
+.st-stack i.night {
+  background: var(--accent);
+}
+
+.st-stack i.night.low {
+  background: var(--bad);
+}
+
+.st-stack i.nap {
+  background: var(--accent-dim);
+}
+
+.st-col span {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 4px;
+  line-height: 1;
+}
+
+.st-sleep-wrap {
+  position: relative;
+  margin: 8px 0 16px;
+}
+
+.st-sleep {
+  position: relative;
+}
+
+.st-goal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 1px dashed var(--warn);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.st-horz {
+  display: grid;
+  gap: 12px;
+  margin: 10px 0 16px;
+}
+
+.st-hmeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.st-hmeta b {
+  font-family: var(--cond);
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.st-hmeta span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.st-htrack {
+  height: 8px;
+  background: var(--line);
+}
+
+.st-hfill {
+  height: 100%;
+  background: var(--warn);
+}
+
+.pillrow.wrap {
+  flex-wrap: wrap;
+}
+
+.st-web {
+  margin: 4px -8px 8px;
+}
+
+.st-web svg {
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  margin: 0 auto;
+}
+
+.st-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 4px;
+}
+
+.st-chips span {
+  border: 1px solid var(--line);
+  padding: 6px 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.st-chips span.on {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.pr-card {
+  padding-top: 8px;
+}
+
+.pr-pre {
+  margin: 14px 0 0;
+  padding: 12px;
+  max-height: 280px;
+  overflow: auto;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  color: var(--muted);
 }

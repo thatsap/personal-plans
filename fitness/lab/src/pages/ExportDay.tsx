@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { RangePills, rangeWindow, type RangeMode } from "../components/RangePills";
 import { ScreenHeader } from "../components/ScreenHeader";
-import { dayEndIso, dayStartIso, todayKey } from "../lib/dates";
+import { dayEndIso, dayStartIso } from "../lib/dates";
 import { listRange } from "../lib/db";
 import { exportAar } from "../lib/export";
 import { rollup } from "../lib/review";
@@ -10,16 +11,35 @@ import { listSessions } from "../lib/workout/db";
 import { rollupWork } from "../lib/workout/review";
 import { listSports } from "../lib/workout/sportsDb";
 import { sportLabel, type SportRow } from "../lib/workout/sports";
+import { listMobility, listSleep } from "../lib/recovery/db";
+import { routineLabel } from "../lib/recovery/routines";
+import { fmtHours } from "../lib/recovery/time";
+import type { MobilityRow, SleepRow } from "../lib/recovery/types";
 import type { IngestionRow } from "../lib/types";
 import type { WorkReview } from "../lib/workout/review";
 
+const DUMP = { from: "2025-12-16", to: "2026-08-26" };
+
 export default function ExportDay() {
-  const [day, setDay] = useState(() => todayKey());
+  const [mode, setMode] = useState<RangeMode>("today");
+  const [from, setFrom] = useState(() => rangeWindow("today")!.from);
+  const [to, setTo] = useState(() => rangeWindow("today")!.to);
   const [rows, setRows] = useState<IngestionRow[]>([]);
   const [work, setWork] = useState<WorkReview | null>(null);
   const [sports, setSports] = useState<SportRow[]>([]);
+  const [sleep, setSleep] = useState<SleepRow[]>([]);
+  const [mobility, setMobility] = useState<MobilityRow[]>([]);
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
+
+  function applyMode(m: RangeMode) {
+    setMode(m);
+    const w = rangeWindow(m, DUMP);
+    if (w) {
+      setFrom(w.from);
+      setTo(w.to);
+    }
+  }
 
   useEffect(() => {
     void (async () => {
@@ -28,36 +48,60 @@ export default function ExportDay() {
       const uid = data.user?.id;
       if (!uid) return;
       try {
-        setRows(await listRange(uid, dayStartIso(day), dayEndIso(day)));
+        setRows(await listRange(uid, dayStartIso(from), dayEndIso(to)));
         setErr("");
       } catch (e) {
         setErr(e instanceof Error ? e.message : "Food load failed");
       }
       try {
-        setWork(rollupWork(await listSessions(uid, dayStartIso(day), dayEndIso(day))));
+        setWork(rollupWork(await listSessions(uid, dayStartIso(from), dayEndIso(to))));
       } catch {
         setWork(null);
       }
       try {
-        setSports(await listSports(uid, dayStartIso(day), dayEndIso(day)));
+        setSports(await listSports(uid, dayStartIso(from), dayEndIso(to)));
       } catch {
         setSports([]);
       }
+      try {
+        setSleep(await listSleep(uid, dayStartIso(from), dayEndIso(to)));
+      } catch {
+        setSleep([]);
+      }
+      try {
+        setMobility(await listMobility(uid, dayStartIso(from), dayEndIso(to)));
+      } catch {
+        setMobility([]);
+      }
     })();
-  }, [day]);
+  }, [from, to]);
 
   const kcal = rows.reduce((s, r) => s + r.kcal, 0);
   const protein = Math.round(rows.reduce((s, r) => s + r.protein_g, 0));
+  const same = from === to;
+  const label = same ? from : `${from} → ${to}`;
 
   return (
     <div className="wrap home-wrap">
       <ScreenHeader kicker="dump" title="Export" />
-      <p className="muted">One day. Food + lifts + sports. Not Garmin burn.</p>
+      <p className="muted">Food + lifts + sports + sleep + mobility for the window. Not Garmin burn.</p>
       <Link to="/" className="muted">
         ← Lab
       </Link>
-      <label>Date</label>
-      <input type="date" value={day} onChange={(e) => setDay(e.target.value)} />
+      <RangePills mode={mode} showDump onChange={applyMode} />
+      {mode === "custom" ? (
+        <div className="row">
+          <label style={{ flex: 1 }}>
+            From
+            <input type="date" value={from} onChange={(e) => setFrom(e.target.value)} />
+          </label>
+          <label style={{ flex: 1 }}>
+            To
+            <input type="date" value={to} onChange={(e) => setTo(e.target.value)} />
+          </label>
+        </div>
+      ) : null}
+      <p className="muted">{label}</p>
       {err ? <p className="err">{err}</p> : null}
       <div className="totals">
         <div className="stat">
@@ -70,12 +114,25 @@ export default function ExportDay() {
         </div>
       </div>
       <p className="muted">
-        {rows.length} meals · {work?.sessions.length ?? 0} lift sessions · {sports.length} sports
+        {rows.length} meals · {work?.sessions.length ?? 0} lift sessions · {sports.length} sports ·{" "}
+        {sleep.length} sleep · {mobility.length} mobility
       </p>
       {sports.map((s) => (
         <div className="item" key={s.id}>
           <div>{sportLabel(s.sport)}</div>
           <div>{s.minutes} min</div>
+        </div>
+      ))}
+      {sleep.map((s) => (
+        <div className="item" key={s.id}>
+          <div>{s.kind === "night" ? "Night" : "Nap"}</div>
+          <div>{fmtHours(s.minutes)}</div>
+        </div>
+      ))}
+      {mobility.map((m) => (
+        <div className="item" key={m.id}>
+          <div>{routineLabel(m.routine_key)}</div>
+          <div>{m.minutes} min</div>
         </div>
       ))}
       <button
@@ -89,10 +146,12 @@ export default function ExportDay() {
               await exportAar({
                 stats: rollup(rows),
                 rows,
-                from: day,
-                to: day,
+                from,
+                to,
                 work,
                 sports,
+                sleep,
+                mobility,
               });
             } catch (e) {
               setErr(e instanceof Error ? e.message : "Export failed");
@@ -102,7 +161,7 @@ export default function ExportDay() {
           })();
         }}
       >
-        Download this day
+        Download {same ? "this day" : "this window"}
       </button>
     </div>
   );

@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
+import { RangePills, rangeWindow, type RangeMode } from "../components/RangePills";
 import { ScreenHeader } from "../components/ScreenHeader";
-import { dayEndIso, dayStartIso, lastNDayKeys, todayKey } from "../lib/dates";
+import { dayEndIso, dayStartIso } from "../lib/dates";
 import { listRange } from "../lib/db";
 import { exportAar } from "../lib/export";
 import { rollup, type ReviewStats } from "../lib/review";
 import { getSupabase } from "../lib/supabase";
 import { KCAL_TARGET, PROTEIN_TARGET, type IngestionRow } from "../lib/types";
 
-type Mode = "3" | "7" | "custom";
+type Mode = RangeMode;
 
 export default function Review() {
   const [mode, setMode] = useState<Mode>("7");
-  const [from, setFrom] = useState(() => lastNDayKeys(7).from);
-  const [to, setTo] = useState(() => todayKey());
+  const [from, setFrom] = useState(() => rangeWindow("7")!.from);
+  const [to, setTo] = useState(() => rangeWindow("7")!.to);
   const [rows, setRows] = useState<IngestionRow[]>([]);
   const [err, setErr] = useState("");
   const [stats, setStats] = useState<ReviewStats | null>(null);
@@ -20,15 +21,10 @@ export default function Review() {
 
   function applyMode(m: Mode) {
     setMode(m);
-    if (m === "3") {
-      const r = lastNDayKeys(3);
-      setFrom(r.from);
-      setTo(r.to);
-    }
-    if (m === "7") {
-      const r = lastNDayKeys(7);
-      setFrom(r.from);
-      setTo(r.to);
+    const w = rangeWindow(m);
+    if (w) {
+      setFrom(w.from);
+      setTo(w.to);
     }
   }
 
@@ -55,21 +51,7 @@ export default function Review() {
       <p className="muted">
         Window vs {KCAL_TARGET} kcal / {PROTEIN_TARGET} g protein. Not Garmin burn.
       </p>
-      <div className="pillrow">
-        <button className={mode === "3" ? "on" : ""} type="button" onClick={() => applyMode("3")}>
-          3 days
-        </button>
-        <button className={mode === "7" ? "on" : ""} type="button" onClick={() => applyMode("7")}>
-          7 days
-        </button>
-        <button
-          className={mode === "custom" ? "on" : ""}
-          type="button"
-          onClick={() => setMode("custom")}
-        >
-          Custom
-        </button>
-      </div>
+      <RangePills mode={mode} onChange={applyMode} />
       {mode === "custom" ? (
         <div className="row">
           <label style={{ flex: 1 }}>

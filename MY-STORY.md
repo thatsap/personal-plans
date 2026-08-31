@@ -1,7 +1,7 @@
 # MY STORY
 ## Ashutosh Pandey — Written From My Perspective
 
-**Last updated:** July 14, 2026  
+**Last updated:** August 31, 2026  
 **Purpose:** A complete record of who I am, where I came from, what happened, and what I'm building now.
 
 ---
@@ -20,12 +20,13 @@
 10. [The End](#the-end)
 11. [Aftermath — What It Did to Me](#aftermath--what-it-did-to-me)
 12. [July 13, 2026 — The Day I Burned the Shrine](#july-13-2026--the-day-i-burned-the-shrine)
-13. [Who I Am When I'm Not Spiraling](#who-i-am-when-im-not-spiraling)
-14. [My Family and Their Expectations](#my-family-and-their-expectations)
-15. [What I'm Building Now](#what-im-building-now)
-16. [The Frameworks I Use to Survive](#the-frameworks-i-use-to-survive)
-17. [What I Want at Day 90](#what-i-want-at-day-90)
-18. [What I Know to Be True — Even When I Don't Believe It](#what-i-know-to-be-true--even-when-i-dont-believe-it)
+13. [August 29, 2026 — Birthday Contact](#august-29-2026--birthday-contact)
+14. [Who I Am When I'm Not Spiraling](#who-i-am-when-im-not-spiraling)
+15. [My Family and Their Expectations](#my-family-and-their-expectations)
+16. [What I'm Building Now](#what-im-building-now)
+17. [The Frameworks I Use to Survive](#the-frameworks-i-use-to-survive)
+18. [What I Want at Day 90](#what-i-want-at-day-90)
+19. [What I Know to Be True — Even When I Don't Believe It](#what-i-know-to-be-true--even-when-i-dont-believe-it)
 
 ---
 
@@ -353,6 +354,18 @@ But I did it because some part of me knows: staying connected was killing my vel
 - Must also pass: **90 days no contact**, indifference test, mute/block her before posting
 - **48-hour rule:** Don't undo any deletion for 48 hours when the urge hits
 - **No texting.** Not for closure. Not for five minutes. Not at 1:39 AM.
+
+---
+
+## AUGUST 29, 2026 — BIRTHDAY CONTACT
+
+I turned **24**. She messaged first. I liked the birthday text and left. About **12 hours later** she came back with a video of her birds.
+
+I poured. She offered friendship I did not ask for, said she would be there, left *or something deeper*, hearted messages, set my nickname to **`.`**. We follow each other on Instagram again. I saw her in comments calling someone else cutie / lil flirt / slayer.
+
+Loving her is not a crime. She does not love me like that. Another text from her is not a return.
+
+**Standing order:** I will not text first. If she texts again: delay, stay small or stay silent. Full register: [AUGUST-29-2026-BIRTHDAY.md](AUGUST-29-2026-BIRTHDAY.md). Logged August 31, 2026.
 
 ---
 

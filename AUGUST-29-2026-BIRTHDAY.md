@@ -35,7 +35,8 @@ I am logging it so I cannot rewrite Saturday into a reunion, and so I cannot rew
 5. She did not say I love you. She offered **friendship**, said she would **be there**, left *or something deeper*, hearted messages, set my nickname to **`.`**
 6. We are **following each other on Instagram** again.
 7. In the **comment section** I saw her calling someone **cutiee**, **you lil flirt**, **you are more slayer than me**.
-8. **Monday, August 31:** I showed the chat, named the mistake, asked who was wrong, asked if she would come back, asked what to do if she texts again. I said: **I will not text her.** This file registers that.
+8. **Monday, August 31, morning:** I showed the Saturday chat, named the mistake, asked who was wrong, asked if she would come back, asked what to do if she texts again. I said: **I will not text her.** This file registers that.
+9. **Monday, August 31, afternoon:** I broke that order. I texted first and asked if she still loves me. Full register: [AUGUST-31-2026-CLOSURE.md](AUGUST-31-2026-CLOSURE.md).
 
 ---
 
@@ -128,6 +129,8 @@ She might message again. That still isn’t coming back.
 ## VIII. STANDING ORDERS — THE DEED
 
 **I will not text her.** Not first. Not for why. Not for `.`. Not about the comments. Not to apologize for Saturday. Not for closure.
+
+*(Broken the same afternoon. Closure ask logged in [AUGUST-31-2026-CLOSURE.md](AUGUST-31-2026-CLOSURE.md). New order: do not buy the no a second time.)*
 
 ### If she texts again
 

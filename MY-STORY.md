@@ -21,12 +21,13 @@
 11. [Aftermath — What It Did to Me](#aftermath--what-it-did-to-me)
 12. [July 13, 2026 — The Day I Burned the Shrine](#july-13-2026--the-day-i-burned-the-shrine)
 13. [August 29, 2026 — Birthday Contact](#august-29-2026--birthday-contact)
-14. [Who I Am When I'm Not Spiraling](#who-i-am-when-im-not-spiraling)
-15. [My Family and Their Expectations](#my-family-and-their-expectations)
-16. [What I'm Building Now](#what-im-building-now)
-17. [The Frameworks I Use to Survive](#the-frameworks-i-use-to-survive)
-18. [What I Want at Day 90](#what-i-want-at-day-90)
-19. [What I Know to Be True — Even When I Don't Believe It](#what-i-know-to-be-true--even-when-i-dont-believe-it)
+14. [August 31, 2026 — Closure Ask](#august-31-2026--closure-ask)
+15. [Who I Am When I'm Not Spiraling](#who-i-am-when-im-not-spiraling)
+16. [My Family and Their Expectations](#my-family-and-their-expectations)
+17. [What I'm Building Now](#what-im-building-now)
+18. [The Frameworks I Use to Survive](#the-frameworks-i-use-to-survive)
+19. [What I Want at Day 90](#what-i-want-at-day-90)
+20. [What I Know to Be True — Even When I Don't Believe It](#what-i-know-to-be-true--even-when-i-dont-believe-it)
 
 ---
 
@@ -366,6 +367,18 @@ I poured. She offered friendship I did not ask for, said she would be there, lef
 Loving her is not a crime. She does not love me like that. Another text from her is not a return.
 
 **Standing order:** I will not text first. If she texts again: delay, stay small or stay silent. Full register: [AUGUST-29-2026-BIRTHDAY.md](AUGUST-29-2026-BIRTHDAY.md). Logged August 31, 2026.
+
+---
+
+## AUGUST 31, 2026 — CLOSURE ASK
+
+Same day, afternoon: I broke the order. I texted first. I asked if she still loves me, if she has genuine feelings.
+
+She said *make it quick.* She would not say yes. She would not say the word no. Respect, appreciate, friends, proceed with your life, stop putting so much into your emotions, *Sonam, it's done bro.* Then Rakhi, gossip, TV, *time to leave.*
+
+That is a **no** without the syllable. I do not buy it twice.
+
+Full register: [AUGUST-31-2026-CLOSURE.md](AUGUST-31-2026-CLOSURE.md).
 
 ---
 

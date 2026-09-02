@@ -1,7 +1,7 @@
 # MY STORY
 ## Ashutosh Pandey — Written From My Perspective
 
-**Last updated:** August 31, 2026  
+**Last updated:** September 2, 2026  
 **Purpose:** A complete record of who I am, where I came from, what happened, and what I'm building now.
 
 ---
@@ -22,12 +22,13 @@
 12. [July 13, 2026 — The Day I Burned the Shrine](#july-13-2026--the-day-i-burned-the-shrine)
 13. [August 29, 2026 — Birthday Contact](#august-29-2026--birthday-contact)
 14. [August 31, 2026 — Closure Ask](#august-31-2026--closure-ask)
-15. [Who I Am When I'm Not Spiraling](#who-i-am-when-im-not-spiraling)
-16. [My Family and Their Expectations](#my-family-and-their-expectations)
-17. [What I'm Building Now](#what-im-building-now)
-18. [The Frameworks I Use to Survive](#the-frameworks-i-use-to-survive)
-19. [What I Want at Day 90](#what-i-want-at-day-90)
-20. [What I Know to Be True — Even When I Don't Believe It](#what-i-know-to-be-true--even-when-i-dont-believe-it)
+15. [September 1–2, 2026 — Last Try](#september-12-2026--last-try)
+16. [Who I Am When I'm Not Spiraling](#who-i-am-when-im-not-spiraling)
+17. [My Family and Their Expectations](#my-family-and-their-expectations)
+18. [What I'm Building Now](#what-im-building-now)
+19. [The Frameworks I Use to Survive](#the-frameworks-i-use-to-survive)
+20. [What I Want at Day 90](#what-i-want-at-day-90)
+21. [What I Know to Be True — Even When I Don't Believe It](#what-i-know-to-be-true--even-when-i-dont-believe-it)
 
 ---
 
@@ -379,6 +380,20 @@ She said *make it quick.* She would not say yes. She would not say the word no. 
 That is a **no** without the syllable. I do not buy it twice.
 
 Full register: [AUGUST-31-2026-CLOSURE.md](AUGUST-31-2026-CLOSURE.md).
+
+---
+
+## SEPTEMBER 1–2, 2026 — LAST TRY
+
+Tuesday night I went back. Last try: I love you, I was wrong, I want you, I need you.
+
+She: no relationship, **especially not with you.** Birthday text was not so I would start this again. That person is long gone. She only loves herself. Friend or not — answer me.
+
+I did not answer. Seen. Deleted the chat. Muted everywhere. Burned the letters and the collage.
+
+**We cannot conclude she is in a new relationship.** Comments and fog are not a boyfriend. The close is: I am not the one.
+
+Full register: [SEPTEMBER-01-2026-LAST-TRY.md](SEPTEMBER-01-2026-LAST-TRY.md).
 
 ---
 

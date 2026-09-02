@@ -37,6 +37,7 @@ I am logging it so I cannot rewrite Saturday into a reunion, and so I cannot rew
 7. In the **comment section** I saw her calling someone **cutiee**, **you lil flirt**, **you are more slayer than me**.
 8. **Monday, August 31, morning:** I showed the Saturday chat, named the mistake, asked who was wrong, asked if she would come back, asked what to do if she texts again. I said: **I will not text her.** This file registers that.
 9. **Monday, August 31, afternoon:** I broke that order. I texted first and asked if she still loves me. Full register: [AUGUST-31-2026-CLOSURE.md](AUGUST-31-2026-CLOSURE.md).
+10. **Tuesday night–Wednesday, September 1–2:** Last try. She: no relationship, especially not with me. I did not answer friend-or-not. Deleted chat. Muted everywhere. Burned the letters. Full register: [SEPTEMBER-01-2026-LAST-TRY.md](SEPTEMBER-01-2026-LAST-TRY.md).
 
 ---
 

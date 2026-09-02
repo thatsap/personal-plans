@@ -131,6 +131,8 @@ I broke it. The information is in.
 
 **New order:** This was the last time I pay for an answer I already had on Saturday. I do not text again to get the word *no* in a better font. I do not follow her into the next *if you care.* I do not enter friendship as a halfway house. I still love her. That room keeps the knife in.
 
+*(Broken the night of September 1. Last try logged in [SEPTEMBER-01-2026-LAST-TRY.md](SEPTEMBER-01-2026-LAST-TRY.md). After that: no reply to friend-or-not, chat deleted, mute everywhere.)*
+
 Mute / unfollow / kill the live feed remains first aid.
 
 Wanting her to regret is allowed as heat. The target is **not** her chest. If the oath needs her to suffer, she still owns the game. The boy gets the brighter day. She is weather.

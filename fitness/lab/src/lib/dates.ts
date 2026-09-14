@@ -41,6 +41,11 @@ export function formatTime(iso: string): string {
   }).format(new Date(iso));
 }
 
+export function weekdayFromKey(key: string): number {
+  const [y, m, d] = key.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d, 6, 30)).getUTCDay();
+}
+
 export function formatDay(key: string): string {
   const [y, m, d] = key.split("-").map(Number);
   const dt = new Date(Date.UTC(y, m - 1, d, 6, 30));

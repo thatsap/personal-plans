@@ -6,6 +6,8 @@ import { dayEndIso, dayStartIso } from "../lib/dates";
 import { listRange } from "../lib/db";
 import { exportAar } from "../lib/export";
 import { rollup } from "../lib/review";
+import { getSettings } from "../lib/settings";
+import { DEFAULT_KCAL_TARGET, DEFAULT_PROTEIN_TARGET, type IngestionRow } from "../lib/types";
 import { getSupabase } from "../lib/supabase";
 import { listSessions } from "../lib/workout/db";
 import { rollupWork } from "../lib/workout/review";
@@ -15,7 +17,6 @@ import { listMobility, listSleep } from "../lib/recovery/db";
 import { routineLabel } from "../lib/recovery/routines";
 import { fmtHours } from "../lib/recovery/time";
 import type { MobilityRow, SleepRow } from "../lib/recovery/types";
-import type { IngestionRow } from "../lib/types";
 import type { WorkReview } from "../lib/workout/review";
 
 const DUMP = { from: "2025-12-16", to: "2026-08-26" };
@@ -29,6 +30,8 @@ export default function ExportDay() {
   const [sports, setSports] = useState<SportRow[]>([]);
   const [sleep, setSleep] = useState<SleepRow[]>([]);
   const [mobility, setMobility] = useState<MobilityRow[]>([]);
+  const [kcalTarget, setKcalTarget] = useState(DEFAULT_KCAL_TARGET);
+  const [proteinTarget, setProteinTarget] = useState(DEFAULT_PROTEIN_TARGET);
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
 
@@ -49,6 +52,13 @@ export default function ExportDay() {
       if (!uid) return;
       try {
         setRows(await listRange(uid, dayStartIso(from), dayEndIso(to)));
+        try {
+          const settings = await getSettings(uid);
+          setKcalTarget(settings.kcalTarget);
+          setProteinTarget(settings.proteinTarget);
+        } catch {
+          /* defaults */
+        }
         setErr("");
       } catch (e) {
         setErr(e instanceof Error ? e.message : "Food load failed");
@@ -144,10 +154,12 @@ export default function ExportDay() {
             setBusy(true);
             try {
               await exportAar({
-                stats: rollup(rows),
+                stats: rollup(rows, kcalTarget, proteinTarget),
                 rows,
                 from,
                 to,
+                kcalTarget,
+                proteinTarget,
                 work,
                 sports,
                 sleep,

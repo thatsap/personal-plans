@@ -1,5 +1,5 @@
-export const KCAL_TARGET = 2455;
-export const PROTEIN_TARGET = 214;
+export const DEFAULT_KCAL_TARGET = 2455;
+export const DEFAULT_PROTEIN_TARGET = 214;
 
 export const UNITS = [
   "g",

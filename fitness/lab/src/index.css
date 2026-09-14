@@ -1482,3 +1482,67 @@ ul.verdict.right li {
   white-space: pre-wrap;
   color: var(--muted);
 }
+
+.today-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 14px;
+  margin: 10px 0;
+}
+
+.today-num {
+  display: block;
+  font-family: var(--cond);
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 4px 0 6px;
+}
+
+.home-decks,
+.home-more {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0 8px;
+}
+
+.home-decks a,
+.home-more a {
+  flex: 1;
+  text-align: center;
+  border: 1px solid var(--line);
+  padding: 12px 8px;
+  color: var(--text);
+  font-family: var(--cond);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.home-decks a {
+  border-color: var(--accent-dim);
+}
+
+.home-more a {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 8px;
+}
+
+.repeat-box {
+  margin: 16px 0 8px;
+}
+
+.repeat-confirm {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+.repeat-confirm .btn {
+  margin-top: 0;
+}

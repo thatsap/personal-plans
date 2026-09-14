@@ -1,7 +1,7 @@
 import { Capacitor } from "@capacitor/core";
 import { Directory, Encoding, Filesystem } from "@capacitor/filesystem";
 import { Share } from "@capacitor/share";
-import { KCAL_TARGET, PROTEIN_TARGET } from "./types";
+import { DEFAULT_KCAL_TARGET, DEFAULT_PROTEIN_TARGET } from "./types";
 import type { IngestionRow } from "./types";
 import type { ReviewStats } from "./review";
 import { workCsv, workText, type WorkReview } from "./workout/review";
@@ -59,11 +59,13 @@ export function buildAarText(
   from: string,
   to: string,
   logCount: number,
+  kcalTarget = DEFAULT_KCAL_TARGET,
+  proteinTarget = DEFAULT_PROTEIN_TARGET,
 ) {
   const lines = [
     "LAB // AFTER ACTION REPORT",
     `Window: ${from} → ${to} (Asia/Kolkata)`,
-    `Protocol: ${KCAL_TARGET} kcal / ${PROTEIN_TARGET} g protein`,
+    `Protocol: ${kcalTarget} kcal / ${proteinTarget} g protein`,
     `Logs: ${logCount}`,
     `Avg kcal/day: ${stats.avgKcal}`,
     `Avg protein: ${stats.avgProtein} g`,
@@ -106,12 +108,21 @@ export async function exportAar(opts: {
   rows: IngestionRow[];
   from: string;
   to: string;
+  kcalTarget?: number;
+  proteinTarget?: number;
   work?: WorkReview | null;
   sports?: SportRow[];
   sleep?: SleepRow[];
   mobility?: MobilityRow[];
 }) {
-  let txt = buildAarText(opts.stats, opts.from, opts.to, opts.rows.length);
+  let txt = buildAarText(
+    opts.stats,
+    opts.from,
+    opts.to,
+    opts.rows.length,
+    opts.kcalTarget,
+    opts.proteinTarget,
+  );
   let csv = buildAarCsv(opts.stats, opts.rows);
   if (opts.work) {
     txt = `${txt}\n\n${workText(opts.work, opts.from, opts.to)}`;

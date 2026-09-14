@@ -6,8 +6,9 @@ import { dayEndIso, dayStartIso } from "../lib/dates";
 import { deleteIngestion, listRange } from "../lib/db";
 import { exportAar } from "../lib/export";
 import { rollup, type ReviewStats } from "../lib/review";
+import { getSettings } from "../lib/settings";
 import { getSupabase } from "../lib/supabase";
-import { KCAL_TARGET, PROTEIN_TARGET, type IngestionRow } from "../lib/types";
+import { DEFAULT_KCAL_TARGET, DEFAULT_PROTEIN_TARGET, type IngestionRow } from "../lib/types";
 
 type Mode = RangeMode;
 
@@ -16,6 +17,8 @@ export default function Review() {
   const [from, setFrom] = useState(() => rangeWindow("7")!.from);
   const [to, setTo] = useState(() => rangeWindow("7")!.to);
   const [rows, setRows] = useState<IngestionRow[]>([]);
+  const [kcalTarget, setKcalTarget] = useState(DEFAULT_KCAL_TARGET);
+  const [proteinTarget, setProteinTarget] = useState(DEFAULT_PROTEIN_TARGET);
   const [err, setErr] = useState("");
   const [stats, setStats] = useState<ReviewStats | null>(null);
   const [exporting, setExporting] = useState(false);
@@ -36,9 +39,14 @@ export default function Review() {
       const uid = data.user?.id;
       if (!uid) return;
       try {
-        const list = await listRange(uid, dayStartIso(from), dayEndIso(to));
+        const [list, settings] = await Promise.all([
+          listRange(uid, dayStartIso(from), dayEndIso(to)),
+          getSettings(uid),
+        ]);
         setRows(list);
-        setStats(rollup(list));
+        setKcalTarget(settings.kcalTarget);
+        setProteinTarget(settings.proteinTarget);
+        setStats(rollup(list, settings.kcalTarget, settings.proteinTarget));
         setErr("");
       } catch (e) {
         setErr(e instanceof Error ? e.message : "Load failed");
@@ -50,7 +58,7 @@ export default function Review() {
     <div className="wrap">
       <ScreenHeader kicker="after action" title="Review" />
       <p className="muted">
-        Window vs {KCAL_TARGET} kcal / {PROTEIN_TARGET} g protein. Not Garmin burn.
+        Window vs {kcalTarget} kcal / {proteinTarget} g protein. Not Garmin burn.
       </p>
       <RangePills mode={mode} onChange={applyMode} />
       {mode === "custom" ? (
@@ -145,7 +153,7 @@ export default function Review() {
                     .then(() => {
                       const next = rows.filter((x) => x.id !== r.id);
                       setRows(next);
-                      setStats(rollup(next));
+                      setStats(rollup(next, kcalTarget, proteinTarget));
                     })
                     .catch((e) => setErr(e instanceof Error ? e.message : "Delete failed"))
                 }
@@ -160,7 +168,7 @@ export default function Review() {
               void (async () => {
                 setExporting(true);
                 try {
-                  await exportAar({ stats, rows, from, to });
+                  await exportAar({ stats, rows, from, to, kcalTarget, proteinTarget });
                 } catch (e) {
                   setErr(e instanceof Error ? e.message : "Export failed");
                 } finally {

@@ -10,6 +10,7 @@ const LABELS: Record<RecycleKind, string> = {
   sleep: "Sleep",
   mobility: "Mobility",
   routine: "Routines",
+  body: "Body",
 };
 
 export default function Bin() {
@@ -85,4 +86,4 @@ export default function Bin() {
   );
 }
 
-const RECYCLE_ORDER: RecycleKind[] = ["session", "sport", "meal", "sleep", "mobility", "routine"];
+const RECYCLE_ORDER: RecycleKind[] = ["session", "sport", "meal", "sleep", "mobility", "routine", "body"];

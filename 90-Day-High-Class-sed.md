@@ -1,711 +1,499 @@
-# THE HIGH-CLASS CHARISMA PROTOCOL
-## 90-Day Roadmap: Cold → Charismatic (Indian Social Context)
+# EXTREMELY ATTRACTIVE
+## From scratch → magnet → then choose: Friend / FWB / Casual  
+### Indian metros · Build the man first · Sex is one output, not the program
 
-**Persona Target:** Composed, high-status, playfully flirtatious — never sleazy.  
-**Environment:** Indian metros (Delhi NCR, Mumbai, Bangalore, Hyderabad, Pune, Chennai, Kolkata).  
-**North Star:** Attract through presence, taste, and calibrated boldness — not through chase, neediness, or cheap lines.
+**North Star:** Become someone people want near them — in a room, in a photo, in a crisis, in bed. Then you *choose* the contract. You do not reverse it (chase sex and hope attractiveness shows up).
 
 ---
 
 ## TABLE OF CONTENTS
 
-1. [Core Philosophy](#core-philosophy)
-2. [The Dual Mode System](#the-dual-mode-system)
-3. [Indian Social Calibration](#indian-social-calibration)
-4. [Phase Architecture (90 Days)](#phase-architecture-90-days)
-5. [Daily Protocol & Drills](#daily-protocol--drills)
-6. [Conversation & Seduction Toolkit](#conversation--seduction-toolkit)
-7. [Physical Escalation Norms (India)](#physical-escalation-norms-india)
-8. [Lifestyle & Aesthetics](#lifestyle--aesthetics)
-9. [Date Architecture](#date-architecture)
-10. [Social Proof & Network Building](#social-proof--network-building)
-11. [Rejection Desensitization Plan](#rejection-desensitization-plan)
-12. [Troubleshooting](#troubleshooting)
-13. [Resources](#resources)
-14. [Printable Weekly Tracker](#printable-weekly-tracker)
-15. [Milestones & Checkpoints](#milestones--checkpoints)
-16. [Final Directives](#final-directives)
+1. [What "extremely attractive" actually is](#what-extremely-attractive-actually-is)
+2. [The stack (start here, in order)](#the-stack-start-here-in-order)
+3. [Phase 0–90: build the magnet](#phase-090-build-the-magnet)
+4. [Daily operating system](#daily-operating-system)
+5. [How she files you](#how-she-files-you)
+6. [Track A — Friend](#track-a--friend)
+7. [Track B — Friends with benefits](#track-b--friends-with-benefits)
+8. [Track C — Casual](#track-c--casual)
+9. [The bedroom (one module)](#the-bedroom-one-module)
+10. [If you live with family](#if-you-live-with-family)
+11. [Troubleshooting](#troubleshooting)
+12. [Weekly tracker](#weekly-tracker)
+13. [Day 90 scoreboard](#day-90-scoreboard)
 
 ---
 
-## CORE PHILOSOPHY
+## WHAT "EXTREMELY ATTRACTIVE" ACTUALLY IS
 
-> **"High-class is not softer. High-class is cleaner. You can be bold without being cheap."**
+It is not a line. It is not a trick. It is **a stack of signals** that land in this order, whether she can name them or not:
 
-You are not becoming a "player" who collects numbers. You are becoming a man who:
+1. **Body in space** — posture, smell, skin, hair, teeth, clothes that fit, how you walk in
+2. **Nervous system** — you are not leaking need. Still face. Slow voice. You can be quiet.
+3. **Proof of life** — you have a craft, a body you train, friends, taste, a calendar that isn't empty
+4. **How you treat the room** — staff, her friends, people who can't do anything for you
+5. **Play** — you can tease and take a tease without collapsing
+6. **Clarity** — you know what you want (friend / FWB / casual / nothing) and you don't sell a fake future
+7. **Private competence** — if it becomes sexual, you are clean, safe, good with her body, good the next morning
 
-1. **Controls his emotional temperature** (cold when needed, warm when he chooses)
-2. **Creates attraction through contrast** (composed baseline + selective playfulness)
-3. **Reads rooms and people** (conservative vs liberal calibration)
-4. **Leaves every interaction with more respect than he entered with**
+Extremely attractive = **high on 1–5 even if she never sleeps with you.**  
+6 and 7 decide *what kind of* closeness you get. Without 1–5, 6 and 7 are just talk.
 
-### The Three Pillars
-
-| Pillar | Meaning | Failure Mode |
-|--------|---------|--------------|
-| **Presence** | Still face, slow speech, eye contact, no fidgeting | Over-talking, seeking approval |
-| **Play** | Tease, tension, light challenge | Over-complimenting, "nice guy" softness |
-| **Standards** | Grooming, venues, friends, how you speak about women | Sleaze, gossip, desperate texts |
-
-### Non-Negotiables
-
-- Consent is the floor, not a checkbox. Soft no = hard stop.
-- Never mock someone's body, caste, religion, family, or career to "tease."
-- Never film, screenshot, or brag about private intimacy.
-- Never use alcohol as a strategy.
-- Never pursue someone who has clearly opted out — once.
-
-### Goal at Day 90
-
-You can walk into a café, wedding, or gallery and:
-- Open without anxiety
-- Hold playful tension without collapsing into chase
-- Switch cold ↔ warm on command
-- Build mixed social circles that create natural social proof
-- Date at a high-class standard without looking try-hard
+You will not become "anyone I want, on demand." You will become **hard to ignore**, then people sort themselves: some friends, some lovers, some neither. That is the win.
 
 ---
 
-## THE DUAL MODE SYSTEM
+## THE STACK (START HERE, IN ORDER)
 
-Your old default is **Cold/Composed**. Keep it as the base. Add **Play/Flirt** as a switch you flip deliberately.
+Do not skip to texting tactics. Attractiveness is built **bottom-up**. Each layer makes the next one cheaper.
 
-### Mode A — Cold / Composed (Default Public Mode)
+### Layer 1 — Body (non-negotiable)
 
-**When:** Work, family events, first 60–90 seconds with someone new, when she's testing you, when you're unsure of interest.
+This is the loudest signal in the first 3 seconds.
 
-**Signals:**
-- Slow blink, calm jaw, minimal nodding
-- Short answers, then silence (comfort with quiet)
-- Body angled slightly away (not locked-on)
-- Voice lower, fewer words
+**Train (pick one and do it 4–5 days/week for 90 days)**
+- **Best default:** full-body strength 3×/week + walk 8–10k steps most days
+- Add: 1–2 conditioning sessions (zones, sport, swim, padel, run club)
+- Sleep 7+ hours. Attractiveness dies here before it dies in your wardrobe.
 
-**Internal line:** *"I don't need this interaction to go well."*
+**Look like you train, not like you live in the gym**
+- Shoulders, back, neck, waist. Posture work: dead hangs, face pulls, daily 5 min wall angels
+- Body fat: you don't need shredded. You need a jaw that shows and clothes that hang clean. If you don't know your baseline, get a photo in the same tee on Day 1 and Day 90. That is the metric.
 
-### Mode B — Play / Flirt (Earned Mode)
+**Food (simple, Indian-life compatible)**
+- Protein at every meal (eggs, dahi, chicken, fish, soya, paneer, whey if you want)
+- Plate: protein + vegetables/salad + starch you actually digest
+- Cut the daily sugar-soda-late-night delivery if that's your default. You don't need a celebrity cut.
 
-**When:** She smiles, holds eye contact, asks questions back, mirrors you, or the vibe is light.
+**Teeth, breath, nails, feet**
+- Dentist if you haven't gone. Whitening strips or a cleaning if teeth are the weak point.
+- Tongue scrape. Don't meet anyone on onion + smoke + skip-brush.
+- Nails short and clean. Feet presentable (sandals season is a test).
 
-**Signals:**
-- Soft smirk (not grin)
-- Teasing observations (not insults)
-- Occasional light challenge ("You're trouble.")
-- Slight lean-in, then lean-back (push-pull body)
+### Layer 2 — Face, skin, hair (the "expensive" look without being rich)
 
-**Internal line:** *"I'm enjoying this — and I can walk away."*
-
-### Switching Drill (Daily, 5 minutes)
-
-1. Sit upright. Face neutral. Breathe 4-4-4.
-2. Say one dry sentence (Mode A).
-3. Switch: smirk + playful sentence (Mode B).
-4. Switch back to Mode A without apology.
-5. Repeat 10 times in the mirror.
-
-**Phrase pairs to practice:**
-
-| Mode A (Cold) | Mode B (Play) |
-|---------------|---------------|
-| "Hmm. Interesting." | "Interesting… or are you just testing me?" |
-| "I don't usually do small talk." | "Lucky you — you're not boring yet." |
-| "Maybe another time." | "Maybe. If you behave." |
-
----
-
-## INDIAN SOCIAL CALIBRATION
-
-India is not one dating market. Calibrate by **context**, not stereotypes.
-
-### Conservative Signals (Slower Track)
-
-- Talks about family early, avoids late-night plans
-- Prefers daytime / public first meetings
-- Dresses modestly relative to venue
-- Hesitates on physical topics; laughs nervously at flirt
-- Friends/family nearby at social events
-
-**Playbook:**
-- Open with warmth + respect, not heat
-- More eye contact, less physical escalation
-- Use wit over touch
-- Suggest coffee / museum / brunch over rooftop bars first
-- Never force WhatsApp late-night banter if she keeps replies short
-
-### Liberal / Cosmopolitan Signals (Faster Track)
-
-- Comfortable with nightlife, travel talk, dating apps
-- Holds eye contact, teases back
-- Suggests drinks / late plans
-- Fashion-forward, mixed friend groups
-
-**Playbook:**
-- Push-pull and teasing land better
-- Physical escalation can move faster *if* she initiates or mirrors
-- Still: high-class venues, clean language, no crude humor early
-
-### Universal Indian Rules
-
-1. **Weddings & family functions:** Flirt lightly, never escalate physically. Reputation travels.
-2. **College / office:** Power dynamics matter. Prefer equal-status social venues.
-3. **Religion/caste jokes:** Don't. Ever. As banter, they read as low-class.
-4. **"Player" label risk:** Higher in smaller cities and conservative circles — see [Troubleshooting](#troubleshooting).
-5. **Phone culture:** Delayed replies ≠ always playing games; traffic, family, work are real.
-
----
-
-## PHASE ARCHITECTURE (90 DAYS)
-
-```
-PHASE 1 — FOUNDATION (Days 1–30)
-Calm presence → basic opens → light social proof
-
-PHASE 2 — CALIBRATION (Days 31–60)
-Push-pull → dates → physical reading → mixed circles
-
-PHASE 3 — MASTERY (Days 61–90)
-High-class dating lifestyle → effortless mode-switching → reputation management
-```
-
----
-
-### PHASE 1: FOUNDATION (Days 1–30)
-**Theme:** Become socially warm without becoming needy.
-
-#### Week 1 — Presence & Eye Contact
-- Hold eye contact 2–3 seconds with strangers (cashier, barista, colleague), then look away calmly
-- Speak 20% slower in all conversations
-- Eliminate filler: "uh," "like," "yaar" overuse
-- **Drill:** Compliment 1 person/day on something non-physical (taste, energy, choice)
-
-#### Week 2 — Low-Stakes Opens
-- Open 3 conversations/day with anyone (men, women, staff) — goal is fluency, not numbers
-- Practice Mode A → Mode B switch once per conversation
-- **Drill:** "What's good here?" / "You look like you know this place — first time?"
-
-#### Week 3 — Female Comfort & Social Proof Seed
-- Join 1 mixed activity (art class, pottery, upscale gym, language café, run club)
-- Make 2 platonic female acquaintances (no dating intent this week)
-- Upgrade grooming stack (see Lifestyle)
-
-#### Week 4 — Soft Approaches + Rejection Exposure
-- Approach 5 women across the week with **zero outcome expectation**
-- Goal: 30–60 second pleasant chat, then exit first
-- Log: setting, open used, her response, your emotional spike (1–10)
-
-**Phase 1 Exit Criteria:**
-- [ ] Can open without heart-rate spiral >7/10
-- [ ] Have at least 1 recurring social activity with women present
-- [ ] Wardrobe and grooming at "polished metro" baseline
-
----
-
-### PHASE 2: CALIBRATION (Days 31–60)
-**Theme:** Create tension. Lead dates. Read signals.
-
-#### Week 5 — Push-Pull Language
-- Use 3 push-pull lines this week (see toolkit)
-- Stop over-texting: max 2–3 message bursts, then invite offline
-- **Drill:** After she compliments you, reply with playful deflection, not "thanks yaar"
-
-#### Week 6 — First Dates (High-Class Lite)
-- Book 2 dates: coffee + walk / gallery + tea
-- Practice: arrive early, phone away, pay gracefully (or split if she insists — don't argue)
-- Exit while energy is still high ("I have to head out — this was fun")
-
-#### Week 7 — Physical Calibration
-- Study IOIs (indicators of interest): lingering eye contact, hair touch, leaning in, laughing at weak jokes
-- Practice progressive touch only when mirrored (see escalation ladder)
-- **Drill:** Handshake → brief upper-arm touch when laughing → stop and gauge
-
-#### Week 8 — Network Density
-- Host or co-host a small mixed hangout (4–8 people): café crawl, board games, art night
-- Introduce friends to each other (you become the hub = social proof)
-- Approach 5 more women; aim for 2 solid number/Instagram closes that convert to plans
-
-**Phase 2 Exit Criteria:**
-- [ ] Completed ≥3 real dates
-- [ ] Can tease without apology
-- [ ] Mixed circle of ≥6 people (at least 2 women as friends, not romantic targets)
-
----
-
-### PHASE 3: MASTERY (Days 61–90)
-**Theme:** Lifestyle is the attractor. Flirting is seasoning.
-
-#### Week 9 — Dual Dating Fluency
-- Keep options honest (don't promise exclusivity you don't mean)
-- Deepen one connection if mutual; keep standards high
-- Practice cold exit from low-effort dynamics (one-word replies, flake twice → soft close)
-
-#### Week 10 — High-Stimulus Environments
-- Operate at: rooftop bar, wedding sangeet (light flirt only), gallery opening, hotel lobby café
-- Focus on group dynamics: talk to everyone, then circle back to her
-
-#### Week 11 — Reputation & Frame Control
-- If called "player," run the troubleshooting scripts
-- Audit social media: tasteful photos, no thirst traps of yourself or others
-- Strengthen male friendships (wingmen) without locker-room toxicity
-
-#### Week 12 — Integration & Lock-In
-- Write your personal "default openers" for 5 venues
-- Define your dating non-negotiables (values, pace, exclusivity rules)
-- Run a full week living the protocol without forcing approaches — attraction from lifestyle
-
-**Phase 3 Exit Criteria:**
-- [ ] Mode switch feels automatic
-- [ ] You have a repeatable date pipeline (venues + opens + texts)
-- [ ] Zero sleazy incidents; reputation intact in your circles
-
----
-
-## DAILY PROTOCOL & DRILLS
-
-### Daily Non-Negotiables (20–40 min)
-
-| Block | Time | Action |
-|-------|------|--------|
-| **AM Presence** | 5 min | Mirror: Mode A ↔ Mode B switches |
-| **Grooming** | 10 min | Skincare + hair + outfit check |
-| **Social Reps** | Throughout day | Min. 3 micro-interactions (anyone) |
-| **Approach / Warmth Rep** | 1–2× | Open or deepen one conversation |
-| **PM Log** | 5 min | What worked, what felt needy, tomorrow's one focus |
-
-### Sample Daily Drills by Week Type
-
-**Foundation days:**  
-"Today, compliment 3 people on something non-physical."  
-Examples: "That notebook is sharp." / "You pick good playlists." / "Your Hindi/English mix is clean."
-
-**Calibration days:**  
-"Today, use one push and one pull in the same conversation."  
-Example: "You're fun… dangerous combination." *(pull)* → "Don't get used to me being this nice." *(push)*
-
-**Mastery days:**  
-"Today, lead one plan without asking permission twice."  
-Example: "I'm going to [gallery] Saturday 5. Come if you want good company."
-
-### Texting Rules (India-Adapted)
-
-1. Match her energy length ±20%.
-2. Prefer voice notes sparingly (high intimacy signal — don't spam).
-3. Move to a plan within 5–10 messages of mutual interest.
-4. No good morning / good night spam unless she's already intimate with you.
-5. If family/conservative vibe: keep texts clean; save heat for in-person wit.
-
----
-
-## CONVERSATION & SEDUCTION TOOLKIT
-
-### Opening Lines — Indian Settings
-
-#### Cafés
-- "Okay, honest opinion — is the cold coffee here actually good or just Instagram bait?"
-- "You've been staring at the menu like it's a board exam. Need a second opinion?"
-- "I was going to work, but you look like you have better taste in tables. Mind if I steal this chair?"
-
-#### Malls / Bookstores
-- "Everyone comes here for AC. What's your real reason?"
-- "If this bookstore had a personality, it'd be…?" *(then tease her answer)*
-- "You're either hunting for something specific or avoiding someone. Which is it?"
-
-#### Weddings / Sangeets (Keep it light)
-- "Be honest — are you here for the couple or the buffet?"
-- "You look like you know the family tree. Guide me before I congratulate the wrong uncle."
-- "If the DJ plays one more Bollywood remix, I'm filing a complaint. Back me up?"
-
-#### Gyms / Studios
-- "You make that look easier than it is. What's your recovery secret — sleep or denial?"
-- "Spot me on form, not ego. Deal?"
-
-#### Art Galleries / Exhibitions
-- "Do you actually like this piece, or are we all pretending?"
-- "Explain this to me like I'm smart but not pretentious."
-
-### Push-Pull Examples (Indian Flavor)
-
-| Pull (warmth) | Push (challenge) |
-|---------------|------------------|
-| "You're easy to talk to." | "That's rare. Don't ruin it by being boring later." |
-| "Okay, you have taste." | "FabIndia tote doesn't automatically mean cultured, though." |
-| "Bollywood romantic or action?" | "If you say Pathaan without irony, we might have a problem." |
-| "You laugh like you mean it." | "Dangerous. I collect dangerous habits." |
-| "I like your energy." | "Still deciding if I should trust it." |
-
-**Rule:** Push never attacks insecurity (body, salary, English accent, family). Push targets **choices, tastes, attitude**.
-
-### Statement Game (Instead of Interview Mode)
-
-Avoid: "What do you do? Where do you live? What's your hobby?"  
-Prefer: "You give 'I work in something creative but hate saying that out loud.'"  
-Then let her correct you — correction = engagement.
-
-### Number / Instagram Close
-
-- "This was fun. I'm [Name]. Put your number — I'll text you that place I mentioned."
-- "Instagram's easier? Fine. But if your feed is only reels, I'm judging lightly."
-
----
-
-## PHYSICAL ESCALATION NORMS (INDIA)
-
-### The Ladder (Only Climb With Green Lights)
-
-1. **Eye contact + smile**
-2. **Social touch:** brief handshake, handing something, high-five energy
-3. **Friendly touch:** light upper arm / shoulder when laughing — then remove
-4. **Seated proximity:** same side of booth, knee not glued
-5. **Hand hold** (only if she reaches or clearly welcomes)
-6. **Hug goodbye** (side hug first in ambiguous contexts)
-7. **Kiss** — private enough venue; never at family events / crowded conservative spaces
-
-### Green Lights
-- She initiates touch
-- She closes distance
-- She holds eye contact after a tease
-- She stays when she could leave
-- She asks personal questions
-
-### Yellow Lights
-- Nervous laugh + step back
-- Short replies after a touch
-- "My friends are calling"
-- Looking around frequently
-
-**Response:** Drop one rung. Increase verbal play. Re-check.
-
-### Red Lights
-- "I'm not like that"
-- Mentions boyfriend/husband
-- Freezes, silence, or visible discomfort
-- Moves seat away
-
-**Response:** Immediate stop. Warm, respectful close. No debate.
-
-### Cultural Notes
-- Public PDA varies wildly by city and neighborhood. Calibrate to *her* comfort, not the city's average.
-- Conservatively dressed ≠ uninterested; it often means slower pace.
-- Never escalate after heavy drinking — yours or hers.
-
----
-
-## LIFESTYLE & AESTHETICS
-
-### Grooming for Indian Skin & Weather
-
-**Daily (AM):**
-1. Lukewarm rinse / gentle cleanser (CeraVe / Minimalist / Cetaphil)
-2. Niacinamide or vitamin C serum (humidity-friendly: Minimalist 10% Niacinamide)
-3. Lightweight moisturizer (gel-cream in summer; cream in winter/North)
-4. SPF 50 PA++++ every morning (reapply if outdoors) — non-negotiable for Indian sun
+**AM**
+1. Lukewarm rinse / gentle cleanser (CeraVe / Cetaphil / Minimalist)
+2. Niacinamide or vitamin C (humidity-friendly)
+3. Gel-cream moisturizer
+4. **SPF 50 PA++++ every morning** — this is the Indian attractiveness cheat code
 5. Lip balm with SPF
 
-**PM:**
-1. Double cleanse if sweaty/polluted day (oil/balm → gentle cleanser)
-2. Treatment (retinol 2–3×/week *or* azelaic/niacinamide — don't stack irritants)
+**PM**
+1. Double cleanse if sweat/pollution
+2. Retinol 2–3×/week *or* azelaic — don't burn your face stacking everything
 3. Moisturizer
 
-**Hair:**
-- Anti-dandruff if needed (Ketoconazole 1–2×/week)
-- Avoid heavy gels in humidity; use light cream/clay for texture
-- Beard: clean lines, conditioned; if clean-shaven, keep neck sharp
+**Hair**
+- Get a *good* cut every 3–4 weeks. Tell the barber the shape, not "short."
+- Dandruff: ketoconazole 1–2×/week until gone
+- Humidity: light cream/clay, not helmet gel
+- Beard: sharp neckline, conditioned — or clean-shaven with a sharp neck. No "forgot for 11 days" island.
 
-**Body:**
-- Deodorant (not perfume overdose)
-- Trim nails; feet presentable for sandals season
-- Hair removal: personal preference — keep neat, not extreme unless your style
+**Scent**
+- Shower. Deodorant. One spray of something light (day) or woody (night). Never a cloud.
+- Clothes must smell like nothing or clean, not cupboard.
 
-**Scent (1 spray max on pulse points):**
-- Office/day: light citrus/woody (e.g., accessible: Skinn by Titan, Nautica Voyage, local niche testers)
-- Evening: deeper woods/spice — never choke a café
+### Layer 3 — Clothes (fit is the attractiveness)
 
-### Fashion — Sophisticated, Accessible India
+**Principle:** Fit > brand. Neutrals + one texture. Tailor everything (₹800–2000 per piece).
 
-**Principle:** Fit > logo. Neutrals + one texture.
+**Build a 10-piece uniform (buy / tailor in Week 1–3)**
+- 2 well-fitted plain or subtle shirts (linen/cotton)
+- 1 oxford or camp-collar for dates
+- 2 trousers/chinos that break clean on the shoe
+- 1 dark jeans that is not skinny-disaster and not dad-baggy
+- 1 overshirt or unstructured blazer
+- White / off-white sneakers you only wear clean
+- 1 pair leather loafers
+- 1 watch that is quiet
+- 1 kurta that actually fits (weddings)
 
-| Context | Look | Accessible Brands |
-|---------|------|-------------------|
-| Day café | Linen/cotton shirt, chinos, clean sneakers/loafers | Uniqlo, H&M, Westside, Marks & Spencer |
-| Smart casual date | Oxford/camp collar shirt, tailored trousers, leather loafers | Allen Solly, Van Heusen, Raymond Ready-to-Wear, Celio |
-| Ethnic / wedding guest | Well-fitted kurta + churidar/trousers, mojaris or clean loafers | FabIndia, Manyavar (fit carefully), Jaypore, local tailor |
-| Art event | Dark jeans or trousers, textured overshirt/blazer, minimal watch | Zara, Mango Man, Snitch (select pieces), Independent labels |
-| Gym → out | Never go direct sweaty; shower + change | Decathlon for training; change kit in bag |
+**Kill immediately:** stacked logos, flip-flops on anything that matters, wrinkled everything, gym clothes as personality, cap indoors on a date, cologne as a personality.
 
-**Tailoring:** Budget ₹800–2000 to alter shirts/trousers. Instant high-class upgrade.
+**How you walk in:** shoulders down and back, phone in pocket, eyes up, slower than your current speed.
 
-**Avoid:**
-- Loud logos stacked
-- Flip-flops on dates
-- Overpowering cologne
-- Wrinkled everything
-- Cap indoors on a date
+### Layer 4 — Voice, face, presence (this is "charisma")
 
-### Voice & Manner
-- Reduce phone-checking to near zero on dates
+Daily 5 minutes in a mirror or phone video:
+
+1. Face at rest — jaw unclenched, forehead quiet. That is your public face.
+2. Speak 20% slower. Cut "uh / like / yaar" spam.
+3. Eye contact 2–3 seconds, then away calmly. Not a stare-fight.
+4. Practice one dry sentence, then one playful sentence, then back to dry. No apology.
+
+**Internal line that makes you attractive:** *"I don't need this person to like me for my day to work."*  
+You cannot fake this if your life is empty. Which is Layer 5.
+
+### Layer 5 — A life that photographs well in person
+
+People are attracted to **proof**.
+
+Pick **three pillars** and keep them for 90 days:
+1. **Train** (already Layer 1)
+2. **Craft** — your work, a skill, a project you can talk about without pitching
+3. **Social** — one recurring mixed group (run club, pottery, art class, sport, Toastmasters, music night)
+
+Add taste: one café you actually like, one bookstore, one gallery habit, music you can name. Not a costume. Just have preferences.
+
+**Money:** you don't need rich. You need *handled* — you can pay for a coffee without theatre, your phone isn't dying, you don't narrate being broke or flexing. Attractiveness is competence, not a story about income.
+
+### Layer 6 — How you treat people
+
+This is the difference between "hot" and "extremely attractive."
+
+- Same manners with waiter, driver, intern, her friend
 - Don't badmouth exes
-- Tip well; treat staff with equal respect (women notice)
-- Hindi/English code-switch smoothly; never mock someone's English
+- Don't mock English, caste, religion, body, salary
+- Tip if the place is that kind of place
+- Phone away when someone is in front of you
+
+Women (and men) use this as a **safety scan**. If you fail it, your face doesn't matter.
+
+### Layer 7 — Play without being a clown
+
+- Tease **choices and tastes**, never insecurities
+- One joke, then silence. Do not stack to "save" a dead joke
+- If a joke dies: one normal sentence, move on. Explaining is cringe
+- Let her talk. Attractive men are not DJs of their own highlight reel
 
 ---
 
-## DATE ARCHITECTURE
+## PHASE 0–90: BUILD THE MAGNET
 
-### High-Class Metro Ideas
+You become extremely attractive *before* you specialize in friend / FWB / casual. Same 90 days. The tracks below start when the stack is in motion — not instead of the stack.
 
-| City-agnostic | Why it works |
-|---------------|--------------|
-| Museum / gallery + tea after | Conversation depth, status, walkable exit |
-| Boutique café with outdoor seating | Daytime safe; easy for conservative comfort |
-| Rooftop bar (early evening) | Atmosphere; keep first drink slow |
-| Live acoustic / jazz night | Shared experience > interrogation |
-| Pottery / cooking class | Side-by-side chemistry, less pressure |
-| Bookstore browse + dessert | Low cost, high taste signal |
-| Lake/park walk at golden hour | Classic; bring light banter, not intensity dump |
-| Hotel high tea | Quiet luxury without nightclub sleaze |
+```
+DAYS 1–30   FOUNDATION     body + skin + 10 pieces + presence + one social hook
+DAYS 31–60  SIGNAL         photos, posture, social density, first honest invites
+DAYS 61–90  MAGNET         you walk in easy; then you pick a track per person
+```
 
-### Date Structure (90–120 min)
+### Days 1–30 — Foundation
 
-1. **Arrive 5–10 min early** — calm, seated or waiting composed
-2. **First 10 min:** Mode A heavy, light Mode B flashes
-3. **Middle:** Stories, opinions, push-pull; avoid life-story dump
-4. **Peak:** Suggest a small adjacent activity ("Let's walk one loop")
-5. **Exit first** while she's still engaged
-6. **Follow-up:** Same evening or next day — short, specific: "Still laughing at the Pathaan take. Free Thursday for that gallery?"
+**Week 1**
+- [ ] Day-1 photos: front, side, in your current "best" outfit (private album)
+- [ ] Book: haircut, dentist if needed, tailor for 2 shirts + 1 trouser
+- [ ] Start training 4× this week (even if ugly)
+- [ ] Install AM/PM skin + SPF
+- [ ] Throw or bag the worst 5 clothing items
+- [ ] Mirror: 5 min presence daily
 
-### Payment Frame
-- Offer to pay first date confidently.
-- If she insists on splitting, allow it graciously (modern metros).
-- Never make money the joke or the flex.
+**Week 2**
+- [ ] Protein at each meal
+- [ ] 3 conversations a day with anyone (staff, men, women) — fluency
+- [ ] Join or visit 1 mixed activity
+- [ ] Buy or fix shoes
 
----
+**Week 3**
+- [ ] Finish the 10-piece uniform
+- [ ] Film yourself walking and talking. Fix slouch and speed
+- [ ] Compliment 1 person/day on *taste or effort*, not their body
 
-## SOCIAL PROOF & NETWORK BUILDING
+**Week 4**
+- [ ] First "I look like I have a life" weekend: train + social + one thing with taste
+- [ ] Sleep audit: if you're on 5 hours, nothing else will save you
 
-### Where to Build Mixed Circles (India)
+**Exit Week 4:** you look *noticeably* cleaner than Day 1 in the same lighting. If not, you skipped Layer 1–3.
 
-- Upscale gyms / boutique fitness (F45, local CrossFit, yoga studios with social culture)
-- Art / pottery / photography weekend classes
-- Toastmasters / debate / book clubs (speech skill + network)
-- Run clubs / badminton / padel groups
-- Language exchanges / cultural festivals
-- Alumni meets, startup community events, gallery openings (City: check Instagram event pages)
+### Days 31–60 — Signal
 
-### Wingman Protocol
-- Find 1–2 reliable friends with similar standards
-- Rule: no cockblocking, no crude commentary, no competing on her face
-- Practice: one opens, other socially proof ("He's the guy who…")
-- Rotate who leads
+- Keep training. This is when the body starts to show.
+- Get 10 photos in good light (friend with a phone, not a bathroom mirror). You need this for apps *and* for self-honesty.
+- Be the person who introduces people in your group (hub > hunter).
+- Practice invites that are specific: "Saturday 5, this gallery. Come if you want."
+- Still no quota of bodies. Quota of **days you looked and behaved like the stack**.
 
-### How to Find Practice Groups
-- Search Meetup / Instagram: "[city] social club", "run club", "art workshop"
-- College alumni WhatsApp → suggest café hangouts
-- Dating coach communities (use selectively; avoid pickup-bro echo chambers)
-- Sports leagues (inter-company / weekend)
+### Days 61–90 — Magnet
 
-**Social proof rule:** Being liked by high-quality women *platonically* is stronger than being seen with random dates.
+- Walk into rooms with Mode A (calm) and flash Mode B (play) only when it's returned
+- You now **sort people into tracks** (next chapters) instead of running one script on everyone
+- Audit: anyone you implied a future you don't mean? Fix it.
+- Day-90 photos in the same tee as Day 1.
 
 ---
 
-## REJECTION DESENSITIZATION PLAN
+## DAILY OPERATING SYSTEM
 
-### Mindset
-Rejection is **data**, not verdict. You are training a muscle: approaching under mild fear.
+| When | What | Why |
+|------|------|-----|
+| Morning | Skin + SPF + 5 min presence | Face and nervous system |
+| Most days | Train or walk | Body |
+| All day | Phone down in conversations; 3 micro-chats | Social muscle |
+| Before leave house | Outfit check: fit, shoes, smell, nails | First 3 seconds |
+| Night | 7h sleep target + 5-line log | Recovery + honesty |
 
-### 30-Day Exposure Ladder
+**Night log (5 lines)**
+1. Train? Y/N  
+2. Did I look intentional when I left the house?  
+3. Did I leak need (overtext, overjoke, hover)?  
+4. One person I treated well who couldn't pay me back  
+5. Tomorrow's single focus  
 
-| Days | Task | Success Metric |
-|------|------|----------------|
-| 1–5 | Smile + "hi" to 3 strangers/day | Did it, regardless of response |
-| 6–10 | Ask for opinions (menu, book, directions) from 3 women/day | 20+ second chat |
-| 11–15 | Full open + 1-minute chat, exit first | Exit without asking for contact |
-| 16–20 | Open + light tease + leave | One tease landed cleanly |
-| 21–25 | Open with intent to get Instagram/number | Ask once; accept no calmly |
-| 26–30 | Open in slightly harder venues (busier café, evening) | Anxiety ≤5/10 mid-approach |
+---
 
-### Post-Rejection Script (Internal)
-1. Breathe out slowly
-2. Say mentally: *"Clean approach. Next."*
-3. Log one learning (timing / venue / energy)
-4. Do not text friends a spiral story
-5. Within 30 minutes, complete a competence action (gym set, code commit, walk)
+## HOW SHE FILES YOU
 
-### Zero-Outcome Days (1× per week)
-Approach or open **only** to practice presence. Forbidden: asking for numbers. This kills outcome addiction.
+You don't read minds. You read **clusters**. One smile is manners. Three costly signals are interest.
+
+| File | Meaning | Typical tells |
+|------|---------|----------------|
+| **Magnet + heat** | She wants more of you | She initiates, returns touch, asks questions that imply a next time, delays leaving, answers *and* opens a new thread |
+| **Magnet + friend** | She likes you, not your hands | Easy in groups, no private pull, no touch-return, "you're sweet" without moving closer |
+| **Polite** | She wants no scene | Short replies, "sometime," first yes then calendar death |
+| **Cringe / off** | You tried too hard or felt unsafe | Courtesy laugh, topic-kill, phone out, she looks at a friend |
+
+**India:** first coffee, laughing at everything, "we should hang" are often training. The **second specific plan** is the truth.
+
+**If you don't know:** "I'm enjoying this. Is this friend-energy or more? One word is enough." Then shut up. "Let's see" = not yes.
+
+**Cringe repair:** stop the bit, don't explain the joke, one normal sentence, give her an exit. Repair once ("that was trying too hard"). Twice is begging.
+
+---
+
+## TRACK A — FRIEND
+
+Use this when **you** want a friend, or she is clearly in the friend file, or sex would mess up a real circle.
+
+### What attractive friendship is
+
+You are not a backup boyfriend. You are not secretly waiting. You are a person with a life who is **easy, useful, and boundaried**.
+
+### How you do it
+
+1. **Meet in the stack places** — class, club, work-adjacent, group hangs. Friendship grows in repeats, not in a "coffee that is actually a date."
+2. **Name it early if it could be confusing.**  
+   "I like you — as a friend. I don't want to make that weird."  
+   Only say this if the air is actually weird. Don't announce friendship like a rejection speech to someone who never asked.
+3. **Invite like a friend:** group, activity, help, sport — not candle-lit one-on-ones every time.
+4. **Help without an invoice.** Edit the CV. Wait for the cab. Share the contact. Then go home. If you only help women you want to sleep with, you don't have friends — you have a pipeline.
+5. **No leftover heat.** Don't "accidental" late-night flirts. Don't drunkenly test. That's how friends become uncomfortable.
+6. **Talk about your dating life lightly or not at all.** Don't use her as a therapist for other women.
+7. **Let her have a boyfriend / other friends.** If that hurts, you were not in Track A.
+
+### Texts (friend)
+
+- Daytime, specific, useful or funny
+- Not good-morning boyfriend simulation
+- Not 11:40 p.m. "you up"
+
+### You did it right if
+
+She introduces you to people, calls when she needs a sane person, and never has to manage your feelings about not being chosen.
+
+---
+
+## TRACK B — FRIENDS WITH BENEFITS
+
+Use this when there is **already** a real friendship *or* a warm repeat connection, **and** both of you want sex **and** neither of you is selling a relationship.
+
+FWB is not "casual with extra emojis." It is: **we already exist in each other's life, and we also sleep together.**
+
+### Preconditions (all of them)
+
+- She is an adult and enthusiastic
+- You have said, out loud, that this is not a relationship
+- She has agreed, out loud — not "she didn't say no"
+- You can handle her dating other people
+- You can keep her privacy (no stories to the boys)
+- You have a private place (see family section)
+
+If she wants a boyfriend, **do not run FWB.** That is Track C rotting into cruelty. Friend without bed, or leave.
+
+### How you open the track (after warmth exists)
+
+Not on day one in a food court.
+
+- "I like hanging out with you. I'm also attracted to you. I'm not looking to be anyone's boyfriend. If you want to keep this as friends only, I can do that and I won't sulk. If you want both — friends and something physical — I want that too. You don't have to answer tonight."
+
+Then give her space. The attractive move is **no pressure after the sentence**.
+
+### How you run it
+
+| Topic | Rule |
+|-------|------|
+| **Frequency** | Desire, not duty. No guilt if she's busy |
+| **Other people** | If she asks, you tell the truth. No roster speech. No secret |
+| **Daytime** | You still do friend things (food, help, group) without making every hang a hunt |
+| **Night** | Sex when both want it. Aftercare still exists (water, cab, kind text) |
+| **Jealousy** | If either of you can't hold it, end the *benefits*, keep the friend if possible |
+| **Check-in** | Every few weeks: "Is this still good for you?" |
+| **End the bed** | "The sexual side is getting uneven. I don't want to string you. Friend door is open. Space if you need it." |
+
+### How FWB dies (don't do these)
+
+- You start acting like a boyfriend (daily essays, sulking when she's out) but refuse the title
+- You start acting like a stranger the morning after
+- You use help as "I did X so you owe me"
+- You hide other people you said you'd be honest about
+
+---
+
+## TRACK C — CASUAL
+
+Use this when you meet someone **new** (app, café, night, trip), there is heat, and both of you want something **light, sexual, time-limited or non-exclusive**, without the shared-life texture of FWB yet.
+
+Casual can *become* FWB if repeats stay friendly. It can also stay four dates and end clean.
+
+### How you do it
+
+1. **Look like the stack.** Casual with a weak stack is just thirsty.
+2. **Short, good dates.** Café + walk, gallery + tea, early rooftop. 90–120 minutes. Phone away. Exit while it's still good.
+3. **Say the deal before or with the first night — not after.**  
+   "I should be straight — I'm not looking to get into a relationship. I like you. I want to see you if this stays easy. If you need serious, I'll respect that and I won't fade like a coward."
+4. **Believe her answer.** If she wants serious, you don't convert her. You leave or you become a friend with no bed.
+5. **Specific invites.** "Thursday 6, this place." "I'll see" that never lands = polite file.
+6. **Isolation without sleaze.** "I don't want this to end in a noisy place. Come back — tea. If tonight's not the night, I'll get you a cab." Mean the cab.
+7. **Parallel, not secret.** If she asks if you're seeing other people: "Yes, nothing serious. You?"
+8. **End like an adult.** One kind line. No 3-day power-silence. No scoreboard.
+
+### Casual vs FWB vs Friend (don't mix the scripts)
+
+| | Friend | FWB | Casual |
+|--|--------|-----|--------|
+| History | Repeats, group, trust | Friendship + sex | New or thin history |
+| How you invite | Activity / group / help | Both hang and sleepovers | Short dates → private |
+| What you say | No fake heat | "Friends + physical, no title" | "Not looking to get serious" |
+| Help | Yes, no invoice | Yes, no invoice | Light; don't play husband |
+| If she wants a relationship | You already aren't selling one | End benefits or become a boyfriend *on purpose* | Don't start the bed |
+
+---
+
+## THE BEDROOM (ONE MODULE)
+
+This is **not** the point of the document. It is what happens when heat + privacy + a yes all exist. Attractive men are competent here so they get **invited back** and don't become a story.
+
+### Rules
+- Soft no = stop. Drunk = no. Frozen = no.
+- Condom unless a sober, explicit, tested-status conversation says otherwise. You still *bring* condoms and lube.
+- Never film. Never recap her body to anyone.
+- You don't "take" her. She walks in.
+
+### Place (India)
+- Her place if she invites
+- Your place only if the door locks and parents aren't the next room
+- Decent hotel if homes don't work — don't joke about cheap hourly rooms
+- Family-home sneaking is low-status and unsafe for her
+
+### Competence (the actual list)
+- Clean body, clean sheets, clean bathroom, water, phone face-down
+- Kiss like a human: match her, pause, look. No eel-tongue opener
+- Hands: waist, neck, over clothes first; between her legs when *she* opens that door
+- Learn her clitoris. Many women don't come from penetration alone. Slow, consistent, ask. Dry ≠ uninterested — lube
+- Condom on before you're at the entrance
+- First minute of sex: almost still. Let her set depth. Her on top if she wants
+- If you finish first or lose an erection: you don't die on the pillow. You stay kind
+- After: water, her timeline for leaving, cab, short text. Not a disappearing act. Not a marriage speech
+
+### Attractive vs cheap in private
+
+| Attractive | Cheap |
+|------------|--------|
+| She feels safer after | She feels used or managed |
+| You asked and listened | You performed porn |
+| You protected her name | You told the group |
+| You can hear "not tonight" and still like her | You sulked |
+
+---
+
+## IF YOU LIVE WITH FAMILY
+
+This is normal. It does not block attractiveness. It blocks **bad logistics**.
+
+- Become extremely attractive anyway (stack doesn't need a bachelor pad)
+- Friend track: easy — meet outside
+- Casual / FWB: her place or a decent hotel, planned like an adult, not a crime
+- Don't introduce casual partners at home as fake shaadi prospects
+- Family questions about marriage ≠ your cue to lie to the woman either
 
 ---
 
 ## TROUBLESHOOTING
 
-### "He's a player" Label in Conservative Circles
+**I want to skip the stack and just get good at taking women to bed**  
+That's why the last draft felt cheap. Bed follows magnet. Magnet is layers 1–6.
 
-**Why it happens:** Multiple visible dates, flirtatious reputation, loose talk by friends, Instagram optics.
+**I'm doing the stack and nobody cares**  
+90 days is the first visible dent, not the final form. Photos Day 1 vs 90. If training and clothes didn't move, you didn't do the stack.
 
-**Fix:**
-1. **Stop narrating your dating life** to mutual friends.
-2. **Increase platonic female friendships** that are clearly non-romantic.
-3. **Show consistency:** same manners with aunties and waitresses.
-4. **Script if confronted:**  
-   "I date intentionally, not carelessly. I don't disrespect anyone. If that's 'player' to some people, that's their vocabulary, not my behavior."
-5. **Never** defend by listing how many women like you.
+**She laughs but never meets**  
+Entertainment file. One specific invite. Then stop.
 
-### She Ghosts After Good Date
-- One light follow-up after 48–72 hrs.
-- If silence → close the loop gracefully: "All good — take care." Then move on.
-- Do not double-text essays.
+**I like her as a friend and I'm getting hard for her**  
+You don't owe her a confession if you can keep your side clean. If you can't, say it once and accept friend-only or distance. Don't leak heat for months.
 
-### You Slip Into Cold Lock (Old Personality)
-- Force Mode B once that day deliberately (tease a friend)
-- Book a social activity within 48 hours
-- Check sleep/stress — cold often returns when depleted
+**FWB and I caught feelings**  
+Say it or end the benefits. Don't punish her dates.
 
-### You Slip Into Try-Hard / Sleaze
-- Audit last 5 messages — delete pickup clichés
-- Return to Mode A for 48 hours
-- Re-read Non-Negotiables
+**She wants a relationship**  
+Believe her. Don't run casual on her clock.
 
-### Family Pressure / "When will you settle?"
-- Separate family timeline from skill-building timeline
-- You can build charisma without broadcasting a "body count" mindset at home
-- High-class = private discipline, public dignity
+**I was cringe**  
+Shorter sentences. Less watching her face for a grade. Leave earlier.
 
-### Approach Anxiety Spike
-- Shrink the goal: only "hi + one question"
-- Change venue to easier (day café > night club)
-- Use wingman for first 10 minutes
+**Family / "player" talk**  
+Stop narrating. Same manners with everyone. Private life stays private.
 
 ---
 
-## RESOURCES
-
-### Books (Read + Adapt)
-
-| Book | How to Use (Indian Adaptation) |
-|------|--------------------------------|
-| **The Art of Seduction** — Robert Greene | Study archetypes (Dandy, Rake, Charismatic). Drop manipulative cruelty. Use "Create a Need" as lifestyle excellence, not games. |
-| **Models** — Mark Manson | Best modern frame: vulnerability + polarity without pickup sleaze. |
-| **How to Win Friends and Influence People** — Dale Carnegie | Foundation of warmth; pair with standards so you don't become a people-pleaser. |
-| **The Charisma Myth** — Olivia Fox Cabane | Presence/power/warmth drills — directly maps to Dual Mode System. |
-| **Atomic Attraction** (selectively) / quality dating blogs | Steal structure; discard anything that treats women as NPCs. |
-
-**Greene adaptation examples:**
-- *Create scarcity* → have a full life (gym, craft, friends), not fake "busy" texts
-- *Send mixed signals* → Dual Mode System, not hot-cold cruelty
-- *Appear to be an object of desire* → social proof via real network
-
-### Creators / Coaches (India & diaspora — verify quality yourself)
-Use for **delivery, fashion, venue ideas** — not for degrading mindsets.
-
-- Search Instagram/YouTube: Indian dating coaches / social skills (e.g., creators in the vein of **Rohit Khosla** and similar metro dating educators)
-- Fashion: Indian men's style creators for climate-appropriate fits
-- Avoid: content that sells hatred of women, "alpha" humiliation, or revenge themes
-
-### Communities
-- Local run clubs, art classes, Toastmasters
-- City-specific Discord/WhatsApp socials (vet culture before joining)
-- Wingman: one trusted friend > ten forum strangers
-
----
-
-## PRINTABLE WEEKLY TRACKER
-
-Copy for each week:
+## WEEKLY TRACKER
 
 ```
-WEEK __  |  PHASE __  |  DATES: __________
+WEEK __
 
-GOALS THIS WEEK:
-1. ________________________________
-2. ________________________________
-3. ________________________________
+MAGNET
+Train days: __ / 5
+Sleep average: __ h
+SPF + skin daily? Y/N
+Left the house looking intentional? __ / 7
+Social hook attended? Y/N
 
-DAILY LOG
-Mon: Opens __ | Mode switches __ | Compliments __ | Anxiety peak __/10 | Note: ________
-Tue: Opens __ | Mode switches __ | Compliments __ | Anxiety peak __/10 | Note: ________
-Wed: Opens __ | Mode switches __ | Compliments __ | Anxiety peak __/10 | Note: ________
-Thu: Opens __ | Mode switches __ | Compliments __ | Anxiety peak __/10 | Note: ________
-Fri: Opens __ | Mode switches __ | Compliments __ | Anxiety peak __/10 | Note: ________
-Sat: Opens __ | Mode switches __ | Dates __       | Anxiety peak __/10 | Note: ________
-Sun: Review | Wins: __________ | Fix next week: __________
+BODY / STYLE
+One upgrade this week: ________________
 
-SOCIAL PROOF
-Activity attended: __________________
-New contacts (M/F): _________________
-Hosted/joined hangout? Y/N
+PRESENCE
+Videos or mirror days: __
+Leaked need? Y/N — where: ________
 
-DATING PIPELINE
-Conversations: __  |  Contacts: __  |  Dates set: __  |  Dates done: __
+PEOPLE (name the TRACK, don't blur)
+Person: ________  Track: Friend / FWB / Casual / Unknown
+Signals: heat / friend / polite / off
+I said a clean sentence about what I want? Y/N
+I respected the file? Y/N
 
-GROOMING / FIT
-Skincare daily? Y/N  |  Outfit intentional? Y/N  |  Tailoring/upgrade?: ________
-
-INTEGRITY CHECK
-Any sleazy moment? Y/N — if Y, what will you correct?
-Consent respected 100%? Y/N
-Spoke about women with respect in male groups? Y/N
-```
-
-### Monthly Scorecard
-
-| Metric | Month 1 | Month 2 | Month 3 |
-|--------|---------|---------|---------|
-| Approaches / opens | | | |
-| Quality dates | | | |
-| Anxiety average (1–10) | | | |
-| Mixed social events | | | |
-| Style upgrades done | | | |
-| "Would respect myself?" score (1–10) | | | |
-
----
-
-## MILESTONES & CHECKPOINTS
-
-### Day 30 Checkpoint
-- [ ] Dual Mode drill is automatic in mirror
-- [ ] 30+ low-stakes conversations logged
-- [ ] 1 recurring mixed social activity
-- [ ] Grooming + 5 solid outfits ready
-- [ ] Can take rejection without day-ruining mood
-
-### Day 60 Checkpoint
-- [ ] ≥3 dates completed
-- [ ] Push-pull feels natural, not scripted
-- [ ] Touch calibration understood (green/yellow/red)
-- [ ] Small mixed hangout hosted or co-hosted
-- [ ] Texting is concise; plans > pen-pal
-
-### Day 90 Checkpoint
-- [ ] Charisma is lifestyle, not a "pickup session"
-- [ ] You attract in daytime environments, not only nightlife
-- [ ] Reputation: bold, not sleazy
-- [ ] Clear personal rules for exclusivity / honesty
-- [ ] Cold personality still available as a tool — no longer a prison
-
----
-
-## FINAL DIRECTIVES
-
-1. **Cold is your armor. Play is your art.** Master both.
-2. **High-class is how she feels after you leave** — safer, more respected, more alive — not confused or used.
-3. **India rewards calibrated boldness.** Reckless boldness becomes gossip; timid silence becomes invisibility.
-4. **Volume early, elegance later.** Phase 1 is reps. Phase 3 is taste.
-5. **If a tactic requires you to despise women, delete the tactic.**
-6. **Your calendar is your charisma.** Full life > clever line.
-7. **Protect privacy.** What happens between two adults is not content for the boys' group.
-
----
-
-### Personalization Hook (Paste into your LLM)
-
-```
-Customize this protocol for me:
-- City: ________
-- Age / profession: ________
-- Current challenge: (e.g., cold personality, approach anxiety, texting, conservative circle)
-- Languages: ________
-- Available evenings: ________
-- Fitness / hobby anchors already in place: ________
-Generate: a 7-day printable calendar + daily reminder lines for Phase __ .
+INTEGRITY
+Helped someone with no invoice? Y/N
+Implied a future I don't mean? Y/N
+Privacy held? Y/N
 ```
 
 ---
 
-> **"Be the man who can walk away — and the man worth staying for. In that order."**
+## DAY 90 SCOREBOARD
+
+- [ ] Day-1 vs Day-90 photos: obvious upgrade
+- [ ] Strength habit is automatic
+- [ ] Skin + hair + 10-piece uniform are boringly solid
+- [ ] You can sit in silence without performing
+- [ ] One recurring mixed social hook
+- [ ] You can put a person in Friend / FWB / Casual and run the matching script
+- [ ] Bedroom kit exists (clean place or hotel plan, condoms, lube) *if* you are using those tracks
+- [ ] Nobody honest would say you sold them a husband
+
+---
+
+### Customize
+
+```
+City:
+Age / work:
+Live with: family / roommates / alone
+Weakest layer right now: body / skin / clothes / presence / life / money-handled
+I want more: friends / FWB / casual / just the magnet
+Evenings I actually have:
+Give me: a 7-day calendar for days 1–7 only.
+```
+
+---
+
+> **Become the man the room already believes. Then tell the truth about what you want. Then let her pick. That is the whole game.**

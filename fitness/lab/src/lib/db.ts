@@ -1,3 +1,4 @@
+import { nowIso } from "./dates";
 import { multiply } from "./math";
 import { uploadMealPhoto } from "./photo";
 import { trash } from "./recycle";
@@ -84,6 +85,74 @@ export async function saveParsed(
     }
   }
   return out;
+}
+
+export type RepeatHint = {
+  food: FoodRow;
+  lastQty: number;
+};
+
+export async function listRepeatHints(userId: string, limit = 8): Promise<RepeatHint[]> {
+  const foods = await listFoods(userId);
+  if (!foods.length) return [];
+  const { data, error } = await sb()
+    .from("ingestions")
+    .select("food_id, name, unit, quantity")
+    .eq("user_id", userId)
+    .order("eaten_at", { ascending: false })
+    .limit(80);
+  if (error) throw error;
+  const qtyByFood = new Map<string, number>();
+  const qtyByName = new Map<string, number>();
+  for (const r of data ?? []) {
+    const row = r as { food_id: string | null; name: string; unit: string; quantity: number };
+    if (row.food_id && !qtyByFood.has(row.food_id)) qtyByFood.set(row.food_id, row.quantity);
+    const nk = `${row.name}|${row.unit}`;
+    if (!qtyByName.has(nk)) qtyByName.set(nk, row.quantity);
+  }
+  const out: RepeatHint[] = [];
+  for (const f of foods) {
+    const q = qtyByFood.get(f.id) ?? qtyByName.get(`${f.name}|${f.unit}`) ?? 1;
+    out.push({ food: f, lastQty: q });
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+export async function logRepeat(
+  userId: string,
+  food: FoodRow,
+  quantity: number,
+  photoDataUrl?: string | null,
+) {
+  const rows = await saveParsed(
+    userId,
+    [
+      {
+        eatenAt: nowIso(),
+        name: food.name,
+        boughtFrom: food.bought_from,
+        ingredients: food.ingredients,
+        tag: food.tag,
+        unit: food.unit,
+        quantity,
+        perUnit: {
+          kcal: food.kcal_per_unit,
+          proteinG: food.protein_g_per_unit,
+          carbsG: food.carbs_g_per_unit,
+          fatG: food.fat_g_per_unit,
+          fiberG: food.fiber_g_per_unit,
+        },
+        uncertainty: "",
+        notes: "",
+        sourceJson: food.source_json,
+      },
+    ],
+    "repeat",
+    photoDataUrl,
+  );
+  await touchFood(food.id);
+  return rows;
 }
 
 export async function listToday(userId: string, fromIso: string, toIso: string) {

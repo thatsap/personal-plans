@@ -271,6 +271,37 @@ export async function lastSessionForRoutine(
   return { ...session, sets: (setData ?? []) as SetRow[] };
 }
 
+export async function listSessionsForRoutine(
+  userId: string,
+  routineId: string,
+  limit = 8,
+): Promise<SessionWithSets[]> {
+  const { data, error } = await sb()
+    .from("workout_sessions")
+    .select("*")
+    .eq("user_id", userId)
+    .eq("routine_id", routineId)
+    .order("started_at", { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  const sessions = ([...(data ?? [])] as SessionRow[]).reverse();
+  if (!sessions.length) return [];
+  const ids = sessions.map((s) => s.id);
+  const { data: setData, error: sErr } = await sb()
+    .from("workout_sets")
+    .select("*")
+    .in("session_id", ids)
+    .order("sort_index", { ascending: true });
+  if (sErr) throw sErr;
+  const by = new Map<string, SetRow[]>();
+  for (const s of (setData ?? []) as SetRow[]) {
+    const list = by.get(s.session_id) ?? [];
+    list.push(s);
+    by.set(s.session_id, list);
+  }
+  return sessions.map((s) => ({ ...s, sets: by.get(s.id) ?? [] }));
+}
+
 export async function lastSlotHints(userId: string): Promise<LastSlotHint[]> {
   const { data, error } = await sb()
     .from("workout_sessions")

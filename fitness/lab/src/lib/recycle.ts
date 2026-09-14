@@ -6,7 +6,7 @@ import type { MobilityRow, SleepRow } from "./recovery/types";
 
 export const BIN_DAYS = 7;
 
-export const RECYCLE_KINDS = ["meal", "session", "sport", "sleep", "mobility", "routine"] as const;
+export const RECYCLE_KINDS = ["meal", "session", "sport", "sleep", "mobility", "routine", "body"] as const;
 export type RecycleKind = (typeof RECYCLE_KINDS)[number];
 
 export type RecycleRow = {
@@ -88,6 +88,13 @@ export async function purgeExpired(userId: string) {
         await sb().storage.from("meal-photos").remove([path]);
       }
     }
+    if (r.kind === "body") {
+      const row = (r.payload as {
+        row?: { photo_front_path?: string | null; photo_side_path?: string | null };
+      })?.row;
+      const paths = [row?.photo_front_path, row?.photo_side_path].filter((p): p is string => !!p);
+      if (paths.length) await sb().storage.from("body-photos").remove(paths);
+    }
   }
   const { error: delErr } = await sb()
     .from("recycle_bin")
@@ -112,6 +119,7 @@ export async function restore(id: string) {
   else if (row.kind === "sleep") await restoreSleep(row.payload);
   else if (row.kind === "mobility") await restoreMobility(row.payload);
   else if (row.kind === "routine") await restoreRoutine(row.payload);
+  else if (row.kind === "body") await restoreBody(row.payload);
   const { error: delErr } = await sb().from("recycle_bin").delete().eq("id", id);
   if (delErr) throwBin(delErr);
 }
@@ -162,5 +170,11 @@ async function restoreRoutine(payload: unknown) {
     last_used_at: row.last_used_at,
     created_at: row.created_at,
   });
+  if (error) throw error;
+}
+
+async function restoreBody(payload: unknown) {
+  const row = (payload as { row: Record<string, unknown> }).row;
+  const { error } = await sb().from("body_logs").insert(row);
   if (error) throw error;
 }

@@ -5,9 +5,13 @@ import { pickPhoto } from "../lib/photo";
 export function PhotoOptional({
   preview,
   onChange,
+  label = "Photo (optional)",
+  hint = "Not required. Does not set calories.",
 }: {
   preview: string | null;
   onChange: (dataUrl: string | null) => void;
+  label?: string;
+  hint?: string;
 }) {
   const [busy, setBusy] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -32,10 +36,10 @@ export function PhotoOptional({
 
   return (
     <div className="photo-opt">
-      <label>Photo (optional)</label>
-      <p className="muted">Not required. Does not set calories.</p>
+      <label>{label}</label>
+      {hint ? <p className="muted">{hint}</p> : null}
       {preview ? (
-        <img className="thumb" src={preview} alt="Meal preview" />
+        <img className="thumb" src={preview} alt="" />
       ) : null}
       <div className="row">
         <button

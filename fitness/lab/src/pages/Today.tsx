@@ -2,16 +2,21 @@ import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { MealThumb } from "../components/MealThumb";
 import { Meter } from "../components/Meter";
+import { RepeatChips } from "../components/RepeatChips";
 import { RowOps } from "../components/RowOps";
 import { ScreenHeader } from "../components/ScreenHeader";
 import { dayEndIso, dayStartIso, formatTime, todayKey } from "../lib/dates";
-import { deleteIngestion, listToday } from "../lib/db";
+import { deleteIngestion, listRepeatHints, listToday, type RepeatHint } from "../lib/db";
 import { pickPhoto, uploadMealPhoto } from "../lib/photo";
+import { getSettings } from "../lib/settings";
 import { getSupabase } from "../lib/supabase";
-import { KCAL_TARGET, PROTEIN_TARGET, type IngestionRow } from "../lib/types";
+import { DEFAULT_KCAL_TARGET, DEFAULT_PROTEIN_TARGET, type IngestionRow } from "../lib/types";
 
 export default function Today() {
   const [rows, setRows] = useState<IngestionRow[]>([]);
+  const [hints, setHints] = useState<RepeatHint[]>([]);
+  const [kcalTarget, setKcalTarget] = useState(DEFAULT_KCAL_TARGET);
+  const [proteinTarget, setProteinTarget] = useState(DEFAULT_PROTEIN_TARGET);
   const [err, setErr] = useState("");
   const key = todayKey();
 
@@ -21,7 +26,16 @@ export default function Today() {
     const uid = data.user?.id;
     if (!uid) return;
     try {
-      setRows(await listToday(uid, dayStartIso(key), dayEndIso(key)));
+      const [list, settings, repeats] = await Promise.all([
+        listToday(uid, dayStartIso(key), dayEndIso(key)),
+        getSettings(uid),
+        listRepeatHints(uid, 8),
+      ]);
+      setRows(list);
+      setKcalTarget(settings.kcalTarget);
+      setProteinTarget(settings.proteinTarget);
+      setHints(repeats);
+      setErr("");
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Load failed");
     }
@@ -64,18 +78,19 @@ export default function Today() {
         <Meter
           label="Energy"
           value={kcal}
-          max={KCAL_TARGET}
+          max={kcalTarget}
           unit="kcal vs protocol"
-          tone={kcal > KCAL_TARGET ? "over" : undefined}
+          tone={kcal > kcalTarget ? "over" : undefined}
         />
         <Meter
           label="Protein"
           value={protein}
-          max={PROTEIN_TARGET}
+          max={proteinTarget}
           unit="grams"
-          tone={protein < PROTEIN_TARGET ? "over" : "ok"}
+          tone={protein < proteinTarget ? "over" : "ok"}
         />
       </div>
+      <RepeatChips hints={hints} onLogged={() => void load()} onError={setErr} />
       {err ? <p className="err">{err}</p> : null}
       {rows.length === 0 ? (
         <p className="empty">No contacts logged. Open a door.</p>

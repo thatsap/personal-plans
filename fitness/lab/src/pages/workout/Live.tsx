@@ -6,9 +6,17 @@ import {
   getRoutine,
   lastSessionForRoutine,
   lastSlotHints,
+  listSessionsForRoutine,
   saveLiveSession,
+  updateRoutine,
 } from "../../lib/workout/db";
 import { applyLastSession, routineToLive } from "../../lib/workout/live";
+import {
+  applyAarProgression,
+  bumpConfirmed,
+  writeBumpsIntoRoutine,
+  type AarBump,
+} from "../../lib/workout/progress";
 import { restDoneSignal, unlockAudio } from "../../lib/workout/signal";
 import { getSupabase } from "../../lib/supabase";
 import type { LiveSlot, RoutineRow } from "../../lib/workout/types";
@@ -26,6 +34,7 @@ export default function WorkoutLive() {
   const nav = useNavigate();
   const [routine, setRoutine] = useState<RoutineRow | null>(null);
   const [slots, setSlots] = useState<LiveSlot[]>([]);
+  const [bumps, setBumps] = useState<AarBump[]>([]);
   const [notes, setNotes] = useState("");
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
@@ -72,6 +81,12 @@ export default function WorkoutLive() {
         if (repeat) {
           const last = await lastSessionForRoutine(uid, row.id);
           if (last) live = applyLastSession(live, last);
+          setBumps([]);
+        } else {
+          const hist = await listSessionsForRoutine(uid, row.id, 8);
+          const progressed = applyAarProgression(live, hist);
+          live = progressed.slots;
+          setBumps(progressed.bumps);
         }
         setSlots(live);
       } catch (e) {
@@ -106,6 +121,19 @@ export default function WorkoutLive() {
         source: repeat ? "repeat" : "live",
         slots,
       });
+      const confirmed = bumps.filter((b) => {
+        const slot = slots.find((s) => s.slotKey === b.slotKey);
+        return slot ? bumpConfirmed(slot, b) : false;
+      });
+      if (confirmed.length) {
+        const nextJson = writeBumpsIntoRoutine(routine.source_json, confirmed);
+        await updateRoutine(routine.id, {
+          name: routine.name,
+          tag: routine.tag,
+          source_json: nextJson,
+          time_cap_min: routine.time_cap_min,
+        });
+      }
       nav("/train", { replace: true });
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Save failed");
@@ -133,6 +161,11 @@ export default function WorkoutLive() {
         </div>
       </header>
       {over ? <p className="err">Over {cap} min. Warning only.</p> : null}
+      {bumps.length ? (
+        <p className="wk-hint">
+          AAR +2.5 kg: {bumps.map((b) => `${b.name} ${b.fromKg}→${b.toKg}`).join(" · ")}
+        </p>
+      ) : null}
       {slots.map((slot) => (
         <SlotCard
           key={slot.key}

@@ -26,20 +26,32 @@ export async function pickPhoto(
   }
 }
 
+export async function uploadUserPhoto(
+  bucket: string,
+  userId: string,
+  fileId: string,
+  dataUrl: string,
+): Promise<string> {
+  const sb = getSupabase();
+  if (!sb) throw new Error("Supabase not connected.");
+  const path = `${userId}/${fileId}.jpg`;
+  const blob = dataUrlToBlob(dataUrl);
+  const { error } = await sb.storage.from(bucket).upload(path, blob, {
+    upsert: true,
+    contentType: blob.type || "image/jpeg",
+  });
+  if (error) throw error;
+  return path;
+}
+
 export async function uploadMealPhoto(
   userId: string,
   ingestionId: string,
   dataUrl: string,
 ): Promise<string> {
+  const path = await uploadUserPhoto("meal-photos", userId, ingestionId, dataUrl);
   const sb = getSupabase();
   if (!sb) throw new Error("Supabase not connected.");
-  const path = `${userId}/${ingestionId}.jpg`;
-  const blob = dataUrlToBlob(dataUrl);
-  const { error } = await sb.storage.from("meal-photos").upload(path, blob, {
-    upsert: true,
-    contentType: blob.type || "image/jpeg",
-  });
-  if (error) throw error;
   const { error: upErr } = await sb
     .from("ingestions")
     .update({ photo_path: path })
@@ -48,12 +60,13 @@ export async function uploadMealPhoto(
   return path;
 }
 
-export async function signedPhotoUrl(path: string): Promise<string | null> {
+export async function signedPhotoUrl(
+  path: string,
+  bucket = "meal-photos",
+): Promise<string | null> {
   const sb = getSupabase();
   if (!sb) return null;
-  const { data, error } = await sb.storage
-    .from("meal-photos")
-    .createSignedUrl(path, 60 * 60);
+  const { data, error } = await sb.storage.from(bucket).createSignedUrl(path, 60 * 60);
   if (error) return null;
   return data.signedUrl;
 }

@@ -32,6 +32,7 @@ import EditSession from "./pages/workout/EditSession";
 import EditSport from "./pages/workout/EditSport";
 import EditRoutine from "./pages/workout/EditRoutine";
 import EditSleep from "./pages/recovery/EditSleep";
+import Body from "./pages/Body";
 import EditMobility from "./pages/recovery/EditMobility";
 import { purgeExpired } from "./lib/recycle";
 
@@ -136,6 +137,7 @@ export default function App() {
         }
       >
         <Route path="/" element={<Home />} />
+        <Route path="/body" element={<Body />} />
         <Route path="/export" element={<ExportDay />} />
         <Route path="/prompts" element={<Prompts />} />
         <Route path="/bin" element={<Bin />} />

@@ -1,4 +1,5 @@
 import { formatDay, istDateKey } from "../dates";
+import { stallLines } from "./progress";
 import { volumeKg } from "./live";
 import type { SessionWithSets } from "./types";
 
@@ -81,7 +82,7 @@ export function rollupWork(sessions: SessionWithSets[]): WorkReview {
     }
   }
 
-  const stuck = stuckLifts(sessions);
+  const stuck = stallLines(sessions);
 
   const lines: string[] = [];
   if (!sessions.length) {
@@ -107,42 +108,6 @@ export function rollupWork(sessions: SessionWithSets[]): WorkReview {
     days,
     lines,
   };
-}
-
-function slotWork(s: SessionWithSets, slot: string) {
-  return s.sets.filter((x) => x.slot_key === slot && x.kind === "work");
-}
-
-function heaviest(sets: SessionWithSets["sets"]) {
-  if (!sets.length) return null;
-  return [...sets].sort((a, b) => b.kg - a.kg)[0];
-}
-
-function stuckLifts(sessions: SessionWithSets[]): string[] {
-  const bySlot = new Map<string, { kg: number; rir: number | null; name: string }[]>();
-  for (const s of sessions) {
-    const slots = new Set(s.sets.map((x) => x.slot_key));
-    for (const slot of slots) {
-      const work = slotWork(s, slot);
-      const h = heaviest(work);
-      if (!h) continue;
-      const rirs = work.map((x) => x.rir).filter((n): n is number => n !== null);
-      const rir = rirs.length ? Math.min(...rirs) : null;
-      const list = bySlot.get(slot) ?? [];
-      list.push({ kg: h.kg, rir, name: h.exercise_name });
-      bySlot.set(slot, list);
-    }
-  }
-  const out: string[] = [];
-  for (const [slot, hist] of bySlot) {
-    if (hist.length < 2) continue;
-    const a = hist[hist.length - 2];
-    const b = hist[hist.length - 1];
-    if (a.kg === b.kg && a.rir !== null && b.rir !== null && a.rir >= 3 && b.rir >= 3) {
-      out.push(`${b.name} (${slot}) stuck at ${b.kg} kg, RIR ${b.rir}. +2.5 next time.`);
-    }
-  }
-  return out;
 }
 
 export function workCsv(stats: WorkReview): string {

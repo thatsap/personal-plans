@@ -1,5 +1,5 @@
 import { formatDay, istDateKey } from "./dates";
-import { KCAL_TARGET, PROTEIN_TARGET, type IngestionRow } from "./types";
+import { DEFAULT_KCAL_TARGET, DEFAULT_PROTEIN_TARGET, type IngestionRow } from "./types";
 
 export type DayRollup = {
   key: string;
@@ -31,7 +31,11 @@ export type ReviewStats = {
   right: string[];
 };
 
-export function rollup(rows: IngestionRow[]): ReviewStats {
+export function rollup(
+  rows: IngestionRow[],
+  kcalTarget = DEFAULT_KCAL_TARGET,
+  proteinTarget = DEFAULT_PROTEIN_TARGET,
+): ReviewStats {
   const map = new Map<string, DayRollup>();
   const junkMap = new Map<string, { name: string; kcal: number; count: number }>();
 
@@ -74,8 +78,8 @@ export function rollup(rows: IngestionRow[]): ReviewStats {
 
   const days = [...map.values()].sort((a, b) => a.key.localeCompare(b.key));
   for (const d of days) {
-    d.overKcal = d.kcal > KCAL_TARGET;
-    d.underProtein = d.protein < PROTEIN_TARGET;
+    d.overKcal = d.kcal > kcalTarget;
+    d.underProtein = d.protein < proteinTarget;
     d.onTarget = !d.overKcal && !d.underProtein;
   }
 
@@ -96,12 +100,12 @@ export function rollup(rows: IngestionRow[]): ReviewStats {
   const right: string[] = [];
   if (daysOver) {
     wrong.push(
-      `${daysOver} day${daysOver === 1 ? "" : "s"} over ${KCAL_TARGET} kcal.`,
+      `${daysOver} day${daysOver === 1 ? "" : "s"} over ${kcalTarget} kcal.`,
     );
   }
   const missP = days.filter((d) => d.underProtein).length;
   if (missP) {
-    wrong.push(`${missP} day${missP === 1 ? "" : "s"} under ${PROTEIN_TARGET} g protein.`);
+    wrong.push(`${missP} day${missP === 1 ? "" : "s"} under ${proteinTarget} g protein.`);
   }
   if (totalJunk) {
     wrong.push(`${totalJunk} junk log${totalJunk === 1 ? "" : "s"} in this window.`);
@@ -124,7 +128,7 @@ export function rollup(rows: IngestionRow[]): ReviewStats {
     wrong.push("No logs in this window. The leak is an empty day.");
   }
   if (!wrong.length && days.length) {
-    right.push("Window is clean vs 2455 / 214. Keep the log boring.");
+    right.push(`Window is clean vs ${kcalTarget} / ${proteinTarget}. Keep the log boring.`);
   }
 
   return {

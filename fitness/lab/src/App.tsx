@@ -34,6 +34,8 @@ import EditRoutine from "./pages/workout/EditRoutine";
 import EditSleep from "./pages/recovery/EditSleep";
 import Body from "./pages/Body";
 import EditMobility from "./pages/recovery/EditMobility";
+import LabIndex from "./pages/lab/Index";
+import LabArticle from "./pages/lab/Article";
 import { purgeExpired } from "./lib/recycle";
 
 function Guard({ children }: { children: ReactNode }) {
@@ -120,6 +122,22 @@ function RecoverShell() {
   );
 }
 
+function LabShell() {
+  return (
+    <>
+      <Outlet />
+      <nav className="nav cols-4">
+        <NavLink to="/" end>
+          Hub
+        </NavLink>
+        <NavLink to="/lab">Lab</NavLink>
+        <NavLink to="/fuel">Fuel</NavLink>
+        <NavLink to="/train">Train</NavLink>
+      </nav>
+    </>
+  );
+}
+
 function BareShell() {
   return <Outlet />;
 }
@@ -190,6 +208,16 @@ export default function App() {
         <Route path="/recover/move" element={<MobilityHub />} />
         <Route path="/recover/mobility/:id" element={<EditMobility />} />
         <Route path="/recover/review" element={<RecReview />} />
+      </Route>
+      <Route
+        element={
+          <Guard>
+            <LabShell />
+          </Guard>
+        }
+      >
+        <Route path="/lab" element={<LabIndex />} />
+        <Route path="/lab/:slug" element={<LabArticle />} />
       </Route>
       <Route path="/add" element={<Navigate to="/fuel/add" replace />} />
       <Route path="/add/json" element={<Navigate to="/fuel/json" replace />} />

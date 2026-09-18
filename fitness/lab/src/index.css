@@ -1500,7 +1500,13 @@ ul.verdict.right li {
   margin: 4px 0 6px;
 }
 
-.home-decks,
+.home-decks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 16px 0 8px;
+}
+
 .home-more {
   display: flex;
   gap: 10px;
@@ -1528,6 +1534,148 @@ ul.verdict.right li {
   font-size: 13px;
   color: var(--muted);
   padding: 8px;
+}
+
+.lab-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.lab-item {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--accent-dim);
+  padding: 16px 14px 14px;
+  color: var(--text);
+}
+
+.lab-item b {
+  display: block;
+  font-family: var(--cond);
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 6px 0 8px;
+}
+
+.lab-item .stamp {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.lab-back {
+  display: inline-block;
+  margin: 8px 0 18px;
+}
+
+.lab-toc {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 22px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+.lab-toc button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  line-height: 1.4;
+}
+
+.lab-article p,
+.lab-article li {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.lab-article ul,
+.lab-article ol {
+  margin: 8px 0 14px;
+  padding-left: 1.2em;
+}
+
+.lab-article h3 {
+  font-family: var(--cond);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 18px 0 8px;
+}
+
+.lab-article section {
+  scroll-margin-top: 12px;
+}
+
+.lab-table-wrap {
+  overflow-x: auto;
+  margin: 12px 0 16px;
+  border: 1px solid var(--line);
+}
+
+.lab-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.lab-table th,
+.lab-table td {
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.lab-table th {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  white-space: nowrap;
+}
+
+.lab-table tr:last-child td {
+  border-bottom: none;
+}
+
+.lab-callout {
+  border: 1px solid var(--accent-dim);
+  background: var(--card);
+  padding: 12px 14px;
+  margin: 12px 0 16px;
+}
+
+.lab-callout p:last-child {
+  margin: 6px 0 0;
+}
+
+.lab-pair {
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  margin: 8px 0 12px;
+}
+
+.lab-pair p {
+  margin: 6px 0;
+}
+
+.lab-pair .kicker {
+  display: inline-block;
+  margin-right: 8px;
 }
 
 .repeat-box {

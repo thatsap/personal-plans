@@ -223,6 +223,7 @@ export default function Home() {
         <Link to="/fuel">Fuel</Link>
         <Link to="/train">Train</Link>
         <Link to="/recover">Recover</Link>
+        <Link to="/lab">Lab</Link>
       </div>
       <div className="home-more">
         <Link to="/export">Export</Link>

@@ -5,7 +5,8 @@ import { Meter } from "../components/Meter";
 import { RepeatChips } from "../components/RepeatChips";
 import { RowOps } from "../components/RowOps";
 import { ScreenHeader } from "../components/ScreenHeader";
-import { dayEndIso, dayStartIso, formatTime, todayKey } from "../lib/dates";
+import { addDaysKey, dayEndIso, dayStartIso, formatDay, formatTime } from "../lib/dates";
+import { useFuelDay } from "../lib/fuelDay";
 import { deleteIngestion, listRepeatHints, listToday, type RepeatHint } from "../lib/db";
 import { pickPhoto, uploadMealPhoto } from "../lib/photo";
 import { getSettings } from "../lib/settings";
@@ -18,16 +19,16 @@ export default function Today() {
   const [kcalTarget, setKcalTarget] = useState(DEFAULT_KCAL_TARGET);
   const [proteinTarget, setProteinTarget] = useState(DEFAULT_PROTEIN_TARGET);
   const [err, setErr] = useState("");
-  const key = todayKey();
+  const { day, past, hm, setDay, setHm, eatenAt, to } = useFuelDay();
 
-  async function load() {
+  async function load(dayKey: string) {
     const sb = getSupabase();
     const { data } = await sb!.auth.getUser();
     const uid = data.user?.id;
     if (!uid) return;
     try {
       const [list, settings, repeats] = await Promise.all([
-        listToday(uid, dayStartIso(key), dayEndIso(key)),
+        listToday(uid, dayStartIso(dayKey), dayEndIso(dayKey)),
         getSettings(uid),
         listRepeatHints(uid, 8),
       ]);
@@ -42,8 +43,8 @@ export default function Today() {
   }
 
   useEffect(() => {
-    void load();
-  }, []);
+    void load(day);
+  }, [day]);
 
   const kcal = useMemo(() => rows.reduce((s, r) => s + r.kcal, 0), [rows]);
   const protein = useMemo(
@@ -53,7 +54,7 @@ export default function Today() {
 
   async function remove(id: string) {
     await deleteIngestion(id);
-    await load();
+    await load(day);
   }
 
   async function attach(id: string) {
@@ -65,7 +66,7 @@ export default function Today() {
     if (!shot) return;
     try {
       await uploadMealPhoto(uid, id, shot);
-      await load();
+      await load(day);
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Photo failed");
     }
@@ -73,7 +74,30 @@ export default function Today() {
 
   return (
     <div className="wrap">
-      <ScreenHeader kicker="ops // intake" title="Today" meta={key} />
+      <ScreenHeader
+        kicker={past ? "ops // backfill" : "ops // intake"}
+        title={past ? "That day" : "Today"}
+        meta={formatDay(day)}
+      />
+      <div className="daystep">
+        <button type="button" onClick={() => setDay(addDaysKey(day, -1))}>
+          Prev
+        </button>
+        <div className="when">
+          <b>{formatDay(day)}</b>
+          <span className="muted">{past ? "logging onto this date" : day}</span>
+        </div>
+        <button type="button" disabled={!past} onClick={() => setDay(addDaysKey(day, 1))}>
+          Next
+        </button>
+      </div>
+      {past ? (
+        <label className="daytime">
+          Clock time on this day
+          <input type="time" value={hm} onChange={(e) => setHm(e.target.value)} />
+          <span className="muted">Each new row uses this clock. Change it between plates.</span>
+        </label>
+      ) : null}
       <div className="totals">
         <Meter
           label="Energy"
@@ -90,10 +114,17 @@ export default function Today() {
           tone={protein < proteinTarget ? "over" : "ok"}
         />
       </div>
-      <RepeatChips hints={hints} onLogged={() => void load()} onError={setErr} />
+      <RepeatChips
+        hints={hints}
+        eatenAt={past ? eatenAt() : undefined}
+        onLogged={() => void load(day)}
+        onError={setErr}
+      />
       {err ? <p className="err">{err}</p> : null}
       {rows.length === 0 ? (
-        <p className="empty">No contacts logged. Open a door.</p>
+        <p className="empty">
+          {past ? "Nothing on this day yet. Log it now." : "No contacts logged. Open a door."}
+        </p>
       ) : (
         <div className="log-list">
           {rows.map((r) => (
@@ -136,8 +167,8 @@ export default function Today() {
           ))}
         </div>
       )}
-      <Link to="/fuel/add" className="btn">
-        Log intake
+      <Link to={to("/fuel/add")} className="btn">
+        {past ? "Log this day" : "Log intake"}
       </Link>
     </div>
   );

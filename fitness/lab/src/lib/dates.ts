@@ -1,5 +1,10 @@
 const TZ = "Asia/Kolkata";
 
+export function nowHm(): string {
+  const hm = nowIso().slice(11, 16);
+  return hm.startsWith("24") ? `00${hm.slice(2)}` : hm;
+}
+
 export function nowIso(): string {
   const d = new Date();
   const parts = new Intl.DateTimeFormat("en-GB", {

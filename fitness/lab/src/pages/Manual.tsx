@@ -2,14 +2,15 @@ import { useMemo, useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { ScreenHeader } from "../components/ScreenHeader";
 import { PhotoOptional } from "../components/PhotoOptional";
-import { nowIso } from "../lib/dates";
 import { saveParsed } from "../lib/db";
+import { useFuelDay } from "../lib/fuelDay";
 import { multiply } from "../lib/math";
 import { getSupabase } from "../lib/supabase";
 import { TAGS, UNITS, type Tag, type Unit } from "../lib/types";
 
 export default function Manual() {
   const nav = useNavigate();
+  const { past, when, eatenAt, to } = useFuelDay();
   const [name, setName] = useState("");
   const [boughtFrom, setBought] = useState("");
   const [ingredients, setIng] = useState("");
@@ -50,7 +51,7 @@ export default function Manual() {
         uid,
         [
           {
-            eatenAt: nowIso(),
+            eatenAt: eatenAt(),
             name: name.trim(),
             boughtFrom,
             ingredients,
@@ -72,7 +73,7 @@ export default function Manual() {
         "manual",
         photo,
       );
-      nav("/fuel", { replace: true });
+      nav(to("/fuel"), { replace: true });
     } catch (er) {
       setErr(er instanceof Error ? er.message : "Save failed");
     } finally {
@@ -83,7 +84,10 @@ export default function Manual() {
   return (
     <div className="wrap">
       <ScreenHeader kicker="door 03" title="Manual" />
-      <p className="muted">Per 1 unit, then quantity. Lab multiplies.</p>
+      <p className="muted">
+        {past ? `Lands on ${when}. ` : ""}
+        Per 1 unit, then quantity. Lab multiplies.
+      </p>
       <form className="hud" onSubmit={submit}>
         <label>Name</label>
         <input value={name} onChange={(e) => setName(e.target.value)} required />

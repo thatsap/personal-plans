@@ -2,14 +2,15 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ScreenHeader } from "../components/ScreenHeader";
 import { PhotoOptional } from "../components/PhotoOptional";
-import { nowIso } from "../lib/dates";
 import { listFoods, saveParsed, touchFood } from "../lib/db";
+import { useFuelDay } from "../lib/fuelDay";
 import { multiply } from "../lib/math";
 import { getSupabase } from "../lib/supabase";
 import type { FoodRow } from "../lib/types";
 
 export default function Repeat() {
   const nav = useNavigate();
+  const { past, when, eatenAt, to } = useFuelDay();
   const [foods, setFoods] = useState<FoodRow[]>([]);
   const [pick, setPick] = useState<FoodRow | null>(null);
   const [qty, setQty] = useState("1");
@@ -65,7 +66,7 @@ export default function Repeat() {
         uid,
         [
           {
-            eatenAt: nowIso(),
+            eatenAt: eatenAt(),
             name: pick.name,
             boughtFrom: pick.bought_from,
             ingredients: pick.ingredients,
@@ -88,7 +89,7 @@ export default function Repeat() {
         photo,
       );
       await touchFood(pick.id);
-      nav("/fuel", { replace: true });
+      nav(to("/fuel"), { replace: true });
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Save failed");
     } finally {
@@ -99,7 +100,10 @@ export default function Repeat() {
   return (
     <div className="wrap">
       <ScreenHeader kicker="door 02" title="Repeat" />
-      <p className="muted">Same food, new quantity. No new JSON.</p>
+      <p className="muted">
+        {past ? `Lands on ${when}. ` : ""}
+        Same food, new quantity. No new JSON.
+      </p>
       <label>Search</label>
       <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="samosa, rice…" />
       {shown.map((f) => (

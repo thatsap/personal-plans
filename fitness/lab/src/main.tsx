@@ -4,11 +4,13 @@ import { BrowserRouter, HashRouter } from "react-router-dom";
 import { Capacitor } from "@capacitor/core";
 import App from "./App";
 import { installBackButton } from "./lib/backButton";
+import { installReminders } from "./lib/reminders";
 import { bootTheme } from "./lib/theme";
 import "./index.css";
 
 bootTheme();
 installBackButton();
+installReminders();
 
 function Router({ children }: { children: ReactNode }) {
   if (Capacitor.isNativePlatform()) {

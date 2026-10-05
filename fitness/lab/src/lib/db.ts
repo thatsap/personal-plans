@@ -124,12 +124,13 @@ export async function logRepeat(
   food: FoodRow,
   quantity: number,
   photoDataUrl?: string | null,
+  eatenAt?: string,
 ) {
   const rows = await saveParsed(
     userId,
     [
       {
-        eatenAt: nowIso(),
+        eatenAt: eatenAt || nowIso(),
         name: food.name,
         boughtFrom: food.bought_from,
         ingredients: food.ingredients,

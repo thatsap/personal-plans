@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ScreenHeader } from "../components/ScreenHeader";
 import { clearCloud } from "../lib/config";
+import { resetRedirect } from "../lib/resetUrl";
 import { getSupabase } from "../lib/supabase";
 
 export default function Login() {
@@ -10,6 +11,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showPw, setShowPw] = useState(false);
   const [err, setErr] = useState("");
+  const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
 
   async function go(mode: "in" | "up") {
@@ -31,6 +33,30 @@ export default function Login() {
       return;
     }
     nav("/", { replace: true });
+  }
+
+  async function forgot() {
+    setErr("");
+    setNote("");
+    const sb = getSupabase();
+    if (!sb) {
+      setErr("Connect Supabase first.");
+      return;
+    }
+    if (!email.trim()) {
+      setErr("Email first.");
+      return;
+    }
+    setBusy(true);
+    const { error } = await sb.auth.resetPasswordForEmail(email.trim(), {
+      redirectTo: resetRedirect(),
+    });
+    setBusy(false);
+    if (error) {
+      setErr(error.message);
+      return;
+    }
+    setNote("Link sent. Open it in the browser and set a new password. The phone uses that same password.");
   }
 
   return (
@@ -65,6 +91,15 @@ export default function Login() {
           </button>
         </div>
         {err ? <p className="err">{err}</p> : null}
+        {note ? <p className="muted">{note}</p> : null}
+        <button
+          className="btn ghost"
+          type="button"
+          disabled={busy}
+          onClick={() => void forgot()}
+        >
+          Forgot password
+        </button>
         <button
           className="btn"
           type="button"

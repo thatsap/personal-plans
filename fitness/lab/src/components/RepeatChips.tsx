@@ -5,10 +5,12 @@ import { getSupabase } from "../lib/supabase";
 
 export function RepeatChips({
   hints,
+  eatenAt,
   onLogged,
   onError,
 }: {
   hints: RepeatHint[];
+  eatenAt?: string;
   onLogged: () => void;
   onError: (msg: string) => void;
 }) {
@@ -42,7 +44,7 @@ export function RepeatChips({
     if (!uid) return;
     setBusy(true);
     try {
-      await logRepeat(uid, pick.food, n);
+      await logRepeat(uid, pick.food, n, null, eatenAt);
       setPick(null);
       onLogged();
     } catch (e) {

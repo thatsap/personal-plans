@@ -14,7 +14,14 @@ export function getSupabase(): SupabaseClient | null {
   const key = cloud.url + cloud.anonKey;
   if (!client || bound !== key) {
     client = createClient(cloud.url, cloud.anonKey, {
-      auth: { persistSession: true, autoRefreshToken: true },
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        // Implicit puts the reset tokens in the email link, so the phone
+        // can request it and the browser can finish it.
+        flowType: "implicit",
+        detectSessionInUrl: true,
+      },
     });
     bound = key;
   }

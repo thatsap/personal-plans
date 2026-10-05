@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ScreenHeader } from "../components/ScreenHeader";
 import { PhotoOptional } from "../components/PhotoOptional";
 import { saveParsed } from "../lib/db";
+import { useFuelDay } from "../lib/fuelDay";
 import { parseIntakeJson } from "../lib/jsonIntake";
 import { multiply } from "../lib/math";
 import { getSupabase } from "../lib/supabase";
@@ -16,6 +17,7 @@ const PROMPT_HINT = (
 
 export default function Json() {
   const nav = useNavigate();
+  const { past, when, eatenAt, to } = useFuelDay();
   const fileRef = useRef<HTMLInputElement>(null);
   const [raw, setRaw] = useState("");
   const [fileName, setFileName] = useState("");
@@ -57,8 +59,10 @@ export default function Json() {
     if (!uid) return;
     setBusy(true);
     try {
-      await saveParsed(uid, preview.items, "json", photo);
-      nav("/fuel", { replace: true });
+      const stamp = eatenAt();
+      const items = past ? preview.items.map((item) => ({ ...item, eatenAt: stamp })) : preview.items;
+      await saveParsed(uid, items, "json", photo);
+      nav(to("/fuel"), { replace: true });
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Save failed");
     } finally {
@@ -69,7 +73,10 @@ export default function Json() {
   return (
     <div className="wrap">
       <ScreenHeader kicker="ingest // file" title="JSON" />
-      <p className="muted">{PROMPT_HINT}</p>
+      <p className="muted">
+        {past ? `Lands on ${when}. ` : ""}
+        {PROMPT_HINT}
+      </p>
       <button
         className="btn"
         type="button"

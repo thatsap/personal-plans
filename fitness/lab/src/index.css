@@ -222,6 +222,53 @@ h2 {
   gap: 8px;
 }
 
+.daystep {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 14px;
+}
+
+.daystep .when {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.daystep .when b {
+  font-family: var(--cond);
+  letter-spacing: 0.06em;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.daystep button {
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 10px 12px;
+  font-family: var(--cond);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.daystep button:disabled {
+  opacity: 0.35;
+}
+
+.daytime {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.daytime input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+}
+
 .totals {
   display: grid;
   grid-template-columns: 1fr 1fr;

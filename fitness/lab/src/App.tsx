@@ -1,9 +1,11 @@
 import { Navigate, NavLink, Outlet, Route, Routes } from "react-router-dom";
 import { useEffect, useState, type ReactNode } from "react";
+import { recoveryLinkPresent } from "./lib/resetUrl";
 import { readCloud } from "./lib/config";
 import { getSupabase } from "./lib/supabase";
 import Connect from "./pages/Connect";
 import Login from "./pages/Login";
+import Reset from "./pages/Reset";
 import Home from "./pages/Home";
 import Today from "./pages/Today";
 import Add from "./pages/Add";
@@ -36,6 +38,7 @@ import Body from "./pages/Body";
 import EditMobility from "./pages/recovery/EditMobility";
 import LabIndex from "./pages/lab/Index";
 import LabArticle from "./pages/lab/Article";
+import { useFuelDay } from "./lib/fuelDay";
 import { purgeExpired } from "./lib/recycle";
 
 function Guard({ children }: { children: ReactNode }) {
@@ -67,6 +70,7 @@ function Guard({ children }: { children: ReactNode }) {
 }
 
 function FuelShell() {
+  const { to } = useFuelDay();
   return (
     <>
       <Outlet />
@@ -77,7 +81,7 @@ function FuelShell() {
         <NavLink to="/fuel" end>
           Today
         </NavLink>
-        <NavLink to="/fuel/add">Log</NavLink>
+        <NavLink to={to("/fuel/add")}>Log</NavLink>
         <NavLink to="/fuel/review">AAR</NavLink>
       </nav>
     </>
@@ -143,10 +147,13 @@ function BareShell() {
 }
 
 export default function App() {
+  const [fromRecovery] = useState(() => recoveryLinkPresent());
+  if (fromRecovery) return <Reset />;
   return (
     <Routes>
       <Route path="/connect" element={<Connect />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/reset" element={<Reset />} />
       <Route
         element={
           <Guard>

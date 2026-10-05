@@ -1,0 +1,68 @@
+LAB // AFTER ACTION REPORT
+Window: 2026-09-14 → 2026-09-23 (Asia/Kolkata)
+Protocol: 2455 kcal / 214 g protein
+Logs: 33
+Avg kcal/day: 2677
+Avg protein: 177 g
+Days over kcal: 3
+Days on target: 0
+
+WRONG
+- 3 days over 2455 kcal.
+- 3 days under 214 g protein.
+- 6 junk logs in this window.
+- Biggest junk: Laddu (1080 kcal).
+
+RIGHT
+- 21 protocol meals logged.
+
+DAYS
+2026-09-21  2677 kcal  P177  junk 2  protocol 7
+2026-09-22  2677 kcal  P177  junk 2  protocol 7
+2026-09-23  2677 kcal  P177  junk 2  protocol 7
+
+JUNK BY KCAL
+- Laddu  1080 kcal  x3
+- Hershey's chocolate syrup  300 kcal  x3
+
+--- CSV ---
+date,kcal,protein_g,carbs_g,fat_g,junk,snack,protocol,items,over_kcal,under_protein
+2026-09-21,2677,177,252,113,2,2,7,11,yes,yes
+2026-09-22,2677,177,252,113,2,2,7,11,yes,yes
+2026-09-23,2677,177,252,113,2,2,7,11,yes,yes
+
+logs
+eaten_at,name,tag,quantity,unit,kcal,protein_g,source
+2026-09-21T09:40:00+00:00,Peanuts,protocol,70,g,397,18.2,json
+2026-09-21T09:40:00+00:00,Laddu,junk,2,piece,360,6,json
+2026-09-21T09:40:00+00:00,Yoga Bar high-protein muesli,protocol,100,g,400,20,json
+2026-09-21T09:40:00+00:00,Tata high-protein muesli,protocol,100,g,400,20,json
+2026-09-21T09:40:00+00:00,SuperYou protein bar,snack,1,piece,180,10,json
+2026-09-21T09:40:00+00:00,Whey protein,protocol,1,g,120,24.5,json
+2026-09-21T09:40:00+00:00,Amul Greek yogurt,protocol,100,g,75,9,json
+2026-09-21T09:40:00+00:00,Amul Gold milk,protocol,500,ml,305,16,json
+2026-09-21T09:40:00+00:00,High-protein paneer vegetable stir-fry,protocol,200,g,270,50,json
+2026-09-21T09:40:00+00:00,Hershey's chocolate syrup,junk,2,tbsp,100,1,json
+2026-09-21T09:40:00+00:00,Tea,snack,1,cup,70,2,json
+2026-09-22T09:40:00+00:00,SuperYou protein bar,snack,1,piece,180,10,json
+2026-09-22T09:40:00+00:00,Amul Greek yogurt,protocol,100,g,75,9,json
+2026-09-22T09:40:00+00:00,High-protein paneer vegetable stir-fry,protocol,200,g,270,50,json
+2026-09-22T09:40:00+00:00,Peanuts,protocol,70,g,397,18.2,json
+2026-09-22T09:40:00+00:00,Laddu,junk,2,piece,360,6,json
+2026-09-22T09:40:00+00:00,Yoga Bar high-protein muesli,protocol,100,g,400,20,json
+2026-09-22T09:40:00+00:00,Tata high-protein muesli,protocol,100,g,400,20,json
+2026-09-22T09:40:00+00:00,Whey protein,protocol,1,g,120,24.5,json
+2026-09-22T09:40:00+00:00,Amul Gold milk,protocol,500,ml,305,16,json
+2026-09-22T09:40:00+00:00,Hershey's chocolate syrup,junk,2,tbsp,100,1,json
+2026-09-22T09:40:00+00:00,Tea,snack,1,cup,70,2,json
+2026-09-23T09:36:00+00:00,SuperYou protein bar,snack,1,piece,180,10,json
+2026-09-23T09:36:00+00:00,Amul Greek yogurt,protocol,100,g,75,9,json
+2026-09-23T09:36:00+00:00,High-protein paneer vegetable stir-fry,protocol,200,g,270,50,json
+2026-09-23T09:36:00+00:00,Peanuts,protocol,70,g,397,18.2,json
+2026-09-23T09:36:00+00:00,Laddu,junk,2,piece,360,6,json
+2026-09-23T09:36:00+00:00,Yoga Bar high-protein muesli,protocol,100,g,400,20,json
+2026-09-23T09:36:00+00:00,Tata high-protein muesli,protocol,100,g,400,20,json
+2026-09-23T09:36:00+00:00,Whey protein,protocol,1,g,120,24.5,json
+2026-09-23T09:36:00+00:00,Amul Gold milk,protocol,500,ml,305,16,json
+2026-09-23T09:36:00+00:00,Hershey's chocolate syrup,junk,2,tbsp,100,1,json
+2026-09-23T12:30:00+00:00,Tea,snack,1,cup,70,2,json
